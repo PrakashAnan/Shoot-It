@@ -3,6 +3,10 @@ import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, Tex
 import Swal from "sweetalert2";
 import { Formik } from "formik";
 import app_config from "../../config";
+<<<<<<< HEAD
+import "./signup.css";
+=======
+>>>>>>> 8ad030aa0ca2813c5d6ec0678fe58104c4780532
 
 const url = app_config.api_url;
 
@@ -53,15 +57,16 @@ const signupSubmit = (values) => {
 
 const UserSignup = () => {
   return (
-    <div>
+    <div >
         
-        <Paper className="bg-primary">
+        <Paper className='back'>
+    
         <Grid container justifyContent="center">
-          <Grid item md={4}>
-            <Card>
+          <Grid item md={4} sm={2}>
+            <Card className='mt-5 mb-5 card'>
               {/* for making card color */}
               <CardContent>
-                <p></p>
+                <h1>Signup Here</h1>
 
                 <Formik
                   initialValues={signupForm}
@@ -78,12 +83,12 @@ const UserSignup = () => {
                         id="name"
                         onChange={handleChange}
                         value={values.name}
-                        // helperText={errors.name}
-                        // error={Boolean(errors.name)}
+                        helperText={errors.name}
+                        error={Boolean(errors.name)}
                       />
 
                       <TextField
-                        className="w-100"
+                        className="w-100 mt-3"
                         autoComplete="off"
                         placeholder="Username"
                         label="username"
