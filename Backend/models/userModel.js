@@ -1,11 +1,12 @@
 const mongoose = require("../connection");
 
 const mySchema = new mongoose.Schema({
-
+    
     name: String,
     username: String,
-    mobile: Number,
+    mobileno: Number,
     password: String,
+    email:String,
     createdAt: { type: Date, default: new Date() },
 
 })
