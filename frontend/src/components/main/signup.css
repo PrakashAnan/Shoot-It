@@ -1,0 +1,11 @@
+.back{
+    background-image: url("https://www.smith.edu/sites/default/files/media/Documents/College-Relations/fall-zoom-5.jpg");
+    /* height: 400px; */
+    background-size: no-repeat;
+    background-size: cover;
+}
+
+.card{
+    background-image: url("");
+
+}

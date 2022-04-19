@@ -2,7 +2,8 @@ import React from 'react';
 import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, TextField } from "@mui/material";
 import Swal from "sweetalert2";
 import { Formik } from "formik";
-import app_config from "./config";
+import app_config from "../../config";
+import "./signup.css";
 
 const url = app_config.api_url;
 
@@ -51,15 +52,16 @@ const signupSubmit = (values) => {
 
 const UserSignup = () => {
   return (
-    <div>
+    <div >
         
-        <Paper className="bg-primary">
+        <Paper className='back'>
+    
         <Grid container justifyContent="center">
-          <Grid item md={4}>
-            <Card>
+          <Grid item md={4} sm={2}>
+            <Card className='mt-5 mb-5 card'>
               {/* for making card color */}
               <CardContent>
-                <p></p>
+                <h1>Signup Here</h1>
 
                 <Formik
                   initialValues={signupForm}
@@ -77,12 +79,12 @@ const UserSignup = () => {
                         id="name"
                         onChange={handleChange}
                         value={values.name}
-                        // helperText={errors.name}
-                        // error={Boolean(errors.name)}
+                        helperText={errors.name}
+                        error={Boolean(errors.name)}
                       />
 
                       <TextField
-                        className="w-100"
+                        className="w-100 mt-3"
                         autoComplete="off"
                         placeholder="Username"
                         label="username"
