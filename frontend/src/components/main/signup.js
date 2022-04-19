@@ -3,7 +3,10 @@ import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, Tex
 import Swal from "sweetalert2";
 import { Formik } from "formik";
 import app_config from "../../config";
+<<<<<<< HEAD
 import "./signup.css";
+=======
+>>>>>>> 8ad030aa0ca2813c5d6ec0678fe58104c4780532
 
 const url = app_config.api_url;
 
@@ -27,6 +30,8 @@ const signupSubmit = (values) => {
 
 
   // fetch function is used to request in frontend from backend.
+
+
   fetch(url + "/admin/add", {
     method: "POST",
     body: JSON.stringify(values),
@@ -65,10 +70,9 @@ const UserSignup = () => {
 
                 <Formik
                   initialValues={signupForm}
-                  // validationSchema={SignupSchema}
                   onSubmit={signupSubmit}
                 >
-                  {({ values, handleChange, handleSubmit, errors }) => (
+                  {({ values, handleChange, handleSubmit,errors}) => (
                     <form onSubmit={handleSubmit}>
 
                         <TextField
