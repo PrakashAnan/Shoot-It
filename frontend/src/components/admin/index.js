@@ -1,7 +1,7 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
 import Sidebar from '../sidebar'
-import { AccountCircle, AccountCircleOutlined, AccountCircleRounded } from "@mui/icons-material"
+import { AccountCircleRounded, Dashboard, ManageAccounts } from "@mui/icons-material"
 
 
 const Admin = () => {
@@ -9,20 +9,26 @@ const Admin = () => {
     const options=[
         {
             name:"Profile",
-            icon:<AccountCircle/>,
+            icon:<AccountCircleRounded/>,
             link:"/admin/profile",
+
+        },
+        {
+            name:"DashBoard",
+            icon:<Dashboard/>,
+            link:"/admin/dashboard",
+
+        },
+        {
+            name:"ManageEquipment",
+            icon:<  ManageAccounts/>,
+            link:"/admin/manageequipment",
 
         },
         {
             name:"ManageUser",
-            icon:<AccountCircleOutlined/>,
-            link:"/admin/profile",
-
-        },
-        {
-            name:"Dashboard",
             icon:<AccountCircleRounded/>,
-            link:"/admin/profile",
+            link:"/admin/manageuser",
 
         },
     ]
