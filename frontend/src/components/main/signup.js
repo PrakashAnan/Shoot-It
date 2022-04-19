@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, TextField } from "@mui/material";
 import Swal from "sweetalert2";
 import { Formik } from "formik";
-import app_config from "./config";
+import app_config from "../../config";
 
 const url = app_config.api_url;
 
@@ -26,6 +26,8 @@ const signupSubmit = (values) => {
 
 
   // fetch function is used to request in frontend from backend.
+
+
   fetch(url + "/admin/add", {
     method: "POST",
     body: JSON.stringify(values),
@@ -63,10 +65,9 @@ const UserSignup = () => {
 
                 <Formik
                   initialValues={signupForm}
-                  // validationSchema={SignupSchema}
                   onSubmit={signupSubmit}
                 >
-                  {({ values, handleChange, handleSubmit, errors }) => (
+                  {({ values, handleChange, handleSubmit,errors}) => (
                     <form onSubmit={handleSubmit}>
 
                         <TextField
