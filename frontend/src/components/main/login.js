@@ -1,12 +1,18 @@
-import { Card, CardContent, Grid, Paper, TextField,Button, Checkbox, FormControlLabel } from '@mui/material';
+import { Card, CardContent, Grid, Paper, TextField, Button, Checkbox, FormControlLabel } from '@mui/material';
 import { Formik } from 'formik';
 import Swal from 'sweetalert2';
 import app_config from '../../config';
 import "./login.css";
 
-const url = app_config.api_url;
 
-const loginForm = {
+
+const Login = () => {
+
+
+
+  const url = app_config.api_url;
+
+  const loginForm = {
     username: "",
     password: "",
   };
@@ -26,12 +32,7 @@ const loginForm = {
           icon: "success",
           title: "Success",
           text: "Loggedin Successfully",
-        }).then(() => {
-          res.json().then((data) => {
-            sessionStorage.setItem("user", JSON.stringify(data));
-            // navigate("/liststudent");
-          });
-        });
+        })
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",
@@ -42,7 +43,7 @@ const loginForm = {
     });
   };
 
-const Login = () => {
+
   return (
     <div>
       <Paper className="loginback">
