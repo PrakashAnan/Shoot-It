@@ -6,12 +6,9 @@ import "./login.css";
 
 const url = app_config.api_url;
 
-
-
 const loginForm = {
     username: "",
     password: "",
-    mobileno: "",
   };
 
   const loginSubmit = (values) => {
@@ -74,14 +71,6 @@ const Login = () => {
                         id="password"
                         onChange={handleChange}
                         value={values.password}
-                      />
-                      <TextField
-                        className="w-100 mt-3"
-                        placeholder="MobileNo"
-                        label="MobileNo"
-                        id="mobileno"
-                        onChange={handleChange}
-                        value={values.mobileno}
                       />
 
                       <div className="mt-3">
