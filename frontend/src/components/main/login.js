@@ -16,7 +16,7 @@ const loginForm = {
 
   const loginSubmit = (values) => {
     console.log(values);
-    fetch(url + "/teacher/checklogin", {
+    fetch(url + "/admin/checklogin", {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
