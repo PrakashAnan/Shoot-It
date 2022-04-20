@@ -31,6 +31,12 @@ const Admin = () => {
             link:"/admin/manageuser",
 
         },
+        {
+            name:"Add Equipment",
+            icon:<AccountCircleRounded/>,
+            link:"/admin/addequipment",
+
+        },
     ]
   return (
     <div>

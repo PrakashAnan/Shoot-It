@@ -29,7 +29,7 @@ const signupSubmit = (values) => {
   // fetch function is used to request in frontend from backend.
 
 
-  fetch(url + "/admin/add", {
+  fetch(url + "/equipment/add", {
     method: "POST",
     body: JSON.stringify(values),
     headers: { "Content-Type": "application/json" },

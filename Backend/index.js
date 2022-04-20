@@ -7,13 +7,10 @@ const cors=require('cors');
 const userRouter = require("./routers/userRouter");
 const equipmentRouter = require("./routers/equipmentRouter");
 
-app.use(express.json());
-
 app.use(cors({
     origin : ['http://localhost:3000']
 
 }))
-
 app.use("/admin", userRouter);
 app.use("/equipment", equipmentRouter);
 
