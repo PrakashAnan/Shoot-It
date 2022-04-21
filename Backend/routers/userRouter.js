@@ -31,7 +31,7 @@ router.post("/checklogin", (req, res) => {
   let formdata = req.body;
   console.log(formdata);
 
-  Model.findOne({ username: formdata.username})
+  Model.findOne({ username: formdata.username })
     .then((data) => {
       if (data) {
         if (data.password === formdata.password) {
@@ -53,6 +53,7 @@ router.post("/checklogin", (req, res) => {
 });
 
 module.exports = router;
+
 
 
 

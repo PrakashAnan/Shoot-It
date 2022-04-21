@@ -13,23 +13,14 @@ const signupForm = {
   username: "",
   mobileno: "",
   password: "",
+  email:"",
 };
 
-// 2. Create a submit callback function
 
 const signupSubmit = (values) => {
   console.log(values);
-  // 1. URL
-  // 2. request method
-  // 3. Data
-  // 4. Data format
-
-
-
-  // fetch function is used to request in frontend from backend.
-
-
-  fetch(url + "/equipment/add", {
+  
+  fetch(url + "/admin/add", {
     method: "POST",
     body: JSON.stringify(values),
     headers: { "Content-Type": "application/json" },
