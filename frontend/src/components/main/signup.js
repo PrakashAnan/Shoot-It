@@ -13,6 +13,7 @@ const signupForm = {
   username: "",
   mobileno: "",
   password: "",
+  email:"",
 };
 
 // 2. Create a submit callback function
@@ -29,7 +30,7 @@ const signupSubmit = (values) => {
   // fetch function is used to request in frontend from backend.
 
 
-  fetch(url + "/equipment/add", {
+  fetch(url + "/admin/add", {
     method: "POST",
     body: JSON.stringify(values),
     headers: { "Content-Type": "application/json" },
@@ -125,7 +126,7 @@ const UserSignup = () => {
                         autoComplete="off"
                         placeholder="Email"
                         label="email"
-                        id="email"
+                        id="email"    
                         onChange={handleChange}
                         value={values.email}
                         helperText={errors.email}
