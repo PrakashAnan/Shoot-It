@@ -19,7 +19,20 @@ const signupForm = {
 
 const signupSubmit = (values) => {
   console.log(values);
+<<<<<<< HEAD
   
+=======
+  // 1. URL
+  // 2. request method
+  // 3. Data
+  // 4. Data format
+
+
+
+  // fetch function is used to request in frontend from backend.
+
+
+>>>>>>> d453f87af37c89d398823b210d9c33e5658dd8db
   fetch(url + "/admin/add", {
     method: "POST",
     body: JSON.stringify(values),
@@ -116,7 +129,7 @@ const UserSignup = () => {
                         autoComplete="off"
                         placeholder="Email"
                         label="email"
-                        id="email"
+                        id="email"    
                         onChange={handleChange}
                         value={values.email}
                         helperText={errors.email}
