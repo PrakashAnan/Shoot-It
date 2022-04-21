@@ -19,7 +19,7 @@ const Login = () => {
 
   const loginSubmit = (values) => {
     console.log(values);
-    fetch(url + "/admin/checklogin", {
+    fetch(url + "/user/checklogin", {
       method: "POST",
       body: JSON.stringify(values),
       headers: {

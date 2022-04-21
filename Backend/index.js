@@ -11,7 +11,9 @@ app.use(cors({
     origin : ['http://localhost:3000']
 
 }))
-app.use("/admin", userRouter);
+app.use(express.json());
+
+app.use("/user", userRouter);
 app.use("/equipment", equipmentRouter);
 
 app.get('/',(req,res)=>{

@@ -19,21 +19,8 @@ const signupForm = {
 
 const signupSubmit = (values) => {
   console.log(values);
-<<<<<<< HEAD
   
-=======
-  // 1. URL
-  // 2. request method
-  // 3. Data
-  // 4. Data format
-
-
-
-  // fetch function is used to request in frontend from backend.
-
-
->>>>>>> d453f87af37c89d398823b210d9c33e5658dd8db
-  fetch(url + "/admin/add", {
+  fetch(url + "/user/add", {
     method: "POST",
     body: JSON.stringify(values),
     headers: { "Content-Type": "application/json" },

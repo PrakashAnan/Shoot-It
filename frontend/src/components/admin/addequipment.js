@@ -11,7 +11,7 @@ const AddEquipment = () => {
         price: "",
         image: "",
         brand:"",
-        rentable:"",
+        rentable:false,
         rentPrice:"",
     }
 
@@ -32,7 +32,7 @@ const AddEquipment = () => {
   return (
     <div>
       <Paper>
-        <Grid container justifyContent="start">
+        <Grid container justifyContent="start" spacing={2}>
           <Grid item md={6} sm={2}>
             <Card>
               <CardContent>
@@ -128,7 +128,7 @@ const AddEquipment = () => {
           </Grid>
           <Grid item md={4} sm={2}>
               <div className="img">
-            <img src="https://cdn.mos.cms.futurecdn.net/saRfG5oSLdSTCkC6znXtER.jpg" alt="" />
+            <img src="https://images.unsplash.com/photo-1618397806877-f0187730803f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtZXJhc3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
             </div>
           </Grid>
         </Grid>
