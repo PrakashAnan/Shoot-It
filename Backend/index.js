@@ -11,12 +11,9 @@ app.use(cors({
     origin : ['http://localhost:3000']
 
 }))
+app.use(express.json());
 app.use("/admin", userRouter);
 app.use("/equipment", equipmentRouter);
-
-app.get('/',(req,res)=>{
-    res.send("you got a response")
-})
 
 app.listen(port,()=>{
     console.log("my major server is started");

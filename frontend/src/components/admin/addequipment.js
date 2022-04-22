@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, Paper, TextField } from "@mui/material";
+import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, TextField } from "@mui/material";
 import { Formik } from "formik";
 import app_config from "../../config";
 import "./addequipment.css";
@@ -11,7 +11,7 @@ const AddEquipment = () => {
         price: "",
         image: "",
         brand:"",
-        rentable:"",
+        rentable:false,
         rentPrice:"",
     }
 
@@ -32,8 +32,8 @@ const AddEquipment = () => {
   return (
     <div>
       <Paper>
-        <Grid container justifyContent="start">
-          <Grid item md={6} sm={2}>
+        <Grid container spacing={2}  justifyContent="start">
+          <Grid item  md={6} sm={2}>
             <Card>
               <CardContent>
               <Formik initialValues={productdetail} onSubmit={submitEquipment}>
@@ -101,6 +101,7 @@ const AddEquipment = () => {
                   value={values.rentable}
                   onChange={handleChange}
                 />
+            
                 <TextField
                   className="w-100 mt-2"
                   autoComplete="off"
@@ -128,7 +129,7 @@ const AddEquipment = () => {
           </Grid>
           <Grid item md={4} sm={2}>
               <div className="img">
-            <img src="https://cdn.mos.cms.futurecdn.net/saRfG5oSLdSTCkC6znXtER.jpg" alt="" />
+            <img src="https://images.unsplash.com/photo-1618397806877-f0187730803f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtZXJhc3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
             </div>
           </Grid>
         </Grid>

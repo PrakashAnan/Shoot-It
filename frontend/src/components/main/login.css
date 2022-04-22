@@ -1,3 +1,33 @@
 .loginback{
     background-image: url("http://www.ntsiri.co.za/wp-content/uploads/2018/07/Ntsiri-Background-Image-Login-Page-2.jpg");
 }
+
+.fa-brands{
+    padding: 15px;
+    font-size: 20px;
+    margin: 15px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Facebook */
+  .fa-facebook-f{
+    background: #3B5998;
+    color:white;
+  }
+  .fa-brands:hover {
+    opacity: 0.7;
+  }
+  
+  /* Twitter */
+  .fa-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+  
+  .fa-instagram{
+    background: #bc2a8d;
+    color: white;
+  }
