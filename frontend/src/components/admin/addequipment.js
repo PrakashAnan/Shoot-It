@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Grid, Paper, TextField } from "@mui/material";
+import { Button, Card, CardContent, Checkbox, Grid, Paper, TextField } from "@mui/material";
 import { Formik } from "formik";
 import app_config from "../../config";
 import "./addequipment.css";
@@ -90,17 +90,14 @@ const AddEquipment = () => {
                   value={values.brand}
                   onChange={handleChange}
                 />
+                 <Checkbox
+                 label="Rentable"
+                 id="rentable"
+                 checked={values.rentable}
+                 onChange={handleChange}
+                   />
 
-                <TextField
-                  className="w-100 mt-2"
-                  autoComplete="off"
-                  variant="filled"
-                  placeholder="Rentable"
-                  label="Rentable"
-                  id="rentable"
-                  value={values.rentable}
-                  onChange={handleChange}
-                />
+
                 <TextField
                   className="w-100 mt-2"
                   autoComplete="off"

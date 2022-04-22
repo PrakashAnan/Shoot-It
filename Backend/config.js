@@ -1,4 +1,4 @@
 const api_config={
-    db_url:"mongodb+srv://Pk123:Pk12345@cluster0.rh9qd.mongodb.net/MajorProject?retryWrites=true&w=majority"
+    db_url:"mongodb+srv://aa278012:Ali12345@cluster0.qjyuw.mongodb.net/ShootIt?retryWrites=true&w=majority"
 }
 module.exports=api_config;

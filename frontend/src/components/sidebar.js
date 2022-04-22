@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -18,6 +18,9 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { useNavigate } from 'react-router-dom';
+import {AccountCircle} from '@mui/icons-material';
+import { Menu, MenuItem } from '@mui/material';
+import { useState } from 'react';
 
 const drawerWidth = 240;
 
@@ -87,8 +90,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function Sidebar({children , options , title}) {
+
+  const [userMenuPos, setUserMenuPos] = useState(null);
+  const showUserMenu = Boolean(userMenuPos);
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
 
   const navigate=useNavigate();
@@ -121,6 +127,17 @@ export default function Sidebar({children , options , title}) {
           <Typography variant="h6" noWrap component="div">
             {title}
           </Typography>
+          <Box sx={{flexGrow : 1}}></Box>
+          <IconButton color="inherit" onClick={e => setUserMenuPos(e.currentTarget)} >
+            <AccountCircle />
+          </IconButton>
+
+            <Menu anchorEl={userMenuPos} open={showUserMenu} onClose={e => setUserMenuPos(null)}>
+              <MenuItem>Item 1</MenuItem>
+              <MenuItem>Item 2</MenuItem>
+              <MenuItem>Item 3</MenuItem>
+            </Menu>
+
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
