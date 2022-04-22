@@ -1,15 +1,11 @@
-<<<<<<< HEAD
 import { Button, Card, CardContent, Checkbox, Grid, Paper, TextField } from "@mui/material";
-=======
-import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, TextField } from "@mui/material";
->>>>>>> 94d79eeb6bbb8c8ea52d64f468798a6164271986
 import { Formik } from "formik";
 import app_config from "../../config";
 import "./addequipment.css";
 
 const AddEquipment = () => {
 
-    const productdetail={
+    const productdetail= {
         title: "",
         model: "",
         price: "",
@@ -102,20 +98,6 @@ const AddEquipment = () => {
                    />
 
 
-<<<<<<< HEAD
-=======
-                <TextField
-                  className="w-100 mt-2"
-                  autoComplete="off"
-                  variant="filled"
-                  placeholder="Rentable"
-                  label="Rentable"
-                  id="rentable"
-                  value={values.rentable}
-                  onChange={handleChange}
-                />
-            
->>>>>>> 94d79eeb6bbb8c8ea52d64f468798a6164271986
                 <TextField
                   className="w-100 mt-2"
                   autoComplete="off"
