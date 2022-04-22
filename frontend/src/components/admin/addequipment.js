@@ -6,6 +6,7 @@ import "./addequipment.css";
 const AddEquipment = () => {
 
     const productdetail={
+        type:"",
         title: "",
         model: "",
         price: "",
@@ -39,6 +40,17 @@ const AddEquipment = () => {
               <Formik initialValues={productdetail} onSubmit={submitEquipment}>
                   {({ values, handleChange, handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
+                <TextField
+                  className="w-100 mt-2"
+                  autoComplete="off"
+                  placeholder="Type"
+                  variant="filled"
+                  label="Type"
+                  id="type"
+                  value={values.type}
+                  onChange={handleChange}
+                />
+            
                 <TextField
                   className="w-100 mt-2"
                   autoComplete="off"

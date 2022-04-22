@@ -1,5 +1,11 @@
 .loginback{
-    background-image: url("http://www.ntsiri.co.za/wp-content/uploads/2018/07/Ntsiri-Background-Image-Login-Page-2.jpg");
+    background-image: url("https://wallpaperaccess.com/full/4893706.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inline-background{
+    background-image: linear-gradient(to left,rgb(213, 223, 213),rgb(99, 165, 156));
 }
 
 .fa-brands{
@@ -31,3 +37,12 @@
     background: #bc2a8d;
     color: white;
   }
+  .pad{
+      margin-left: 120px;
+  }
+  .or{
+    margin: 10px;
+    font-weight: bold;
+    font-family:sans-serif;
+  }
+  

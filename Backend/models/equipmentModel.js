@@ -1,6 +1,7 @@
 const mongoose = require("../connection");
 
 const mySchema = new mongoose.Schema({
+  type:String,
   title: String,
   model: String,
   price: Number,

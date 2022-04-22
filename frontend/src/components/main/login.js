@@ -48,7 +48,7 @@ const Login = () => {
     <div>
       <Paper className="loginback">
         <Grid container justifyContent="center">
-          <Grid item md={4}>
+          <Grid item md={4} sm={2}>
             <Card className="mt-4 mb-4">
               <CardContent className="inline-background">
                 <p className="h3 text-center mb-3 mt-3">Login Here</p>
@@ -93,12 +93,12 @@ const Login = () => {
                   )}
                 </Formik>
 
-                <div className="">
-                  <p className="or">Or Sign Up Using</p>
+                <div className="mt-2">
+                  <p className="or">Or Login Using</p>
                 </div>
 
                 {/* social media icons */}
-                <div className="mt-4">
+                <div className="pad mt-4">
                   <a href="" className="fa-brands fa-whatsapp"></a>
                   <a href="" className="fa-brands fa-instagram"></a>
                   <a href="" className="fa-brands fa-facebook-f"></a>
