@@ -9,7 +9,7 @@ const AdminProfile = () => {
   return (
     
     <div>
-      <h1>Signup Here</h1>
+      <h1>Profile component</h1>
       
     </div>
   );

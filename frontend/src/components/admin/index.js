@@ -37,6 +37,18 @@ const Admin = () => {
             link:"/admin/addequipment",
 
         },
+        {
+            name:"Signup",
+            icon:<AccountCircleRounded/>,
+            link:"/main/usersignup",
+
+        },
+        {
+            name:"Login",
+            icon:<AccountCircleRounded/>,
+            link:"/main/login",
+
+        },
     ]
   return (
     <div>
