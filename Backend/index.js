@@ -12,17 +12,22 @@ app.use(cors({
 
 }))
 app.use(express.json());
-
 app.use("/user", userRouter);
 app.use("/equipment", equipmentRouter);
-
-app.get('/',(req,res)=>{
-    res.send("you got a response")
-})
 
 app.listen(port,()=>{
     console.log("my major server is started");
 })
+
+
+
+
+
+
+
+
+
+
 
 
 
