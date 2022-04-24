@@ -48,7 +48,7 @@ const Login = () => {
     <div>
       <Paper className="loginback">
         <Grid container justifyContent="center">
-          <Grid item md={4}>
+          <Grid item md={4} sm={2}>
             <Card className="mt-4 mb-4">
               <CardContent className="inline-background">
                 <p className="h3 text-center mb-3 mt-3">Login Here</p>
@@ -75,6 +75,7 @@ const Login = () => {
                       />
 
                       <div className="mt-3">
+                        
                         <FormControlLabel
                           control={<Checkbox defaultChecked />}
                           label="Remember Me"
@@ -93,12 +94,12 @@ const Login = () => {
                   )}
                 </Formik>
 
-                <div className="">
-                  <p className="or">Or Sign Up Using</p>
+                <div className="mt-2">
+                  <p className="or">Or Login Using</p>
                 </div>
 
                 {/* social media icons */}
-                <div className="mt-4">
+                <div className="pad mt-4">
                   <a href="" className="fa-brands fa-whatsapp"></a>
                   <a href="" className="fa-brands fa-instagram"></a>
                   <a href="" className="fa-brands fa-facebook-f"></a>
@@ -115,8 +116,19 @@ const Login = () => {
                   </p>
                 </div>
 
-                {/* <WhatsAppIcon /> */}
+         
               </CardContent>
+            </Card>
+          </Grid>
+          <Grid item md={4} sm={2}>
+            <Card className="mt-4">
+              
+              <div className="third">
+                
+            <img className='img-fluid sideimg'  src='https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''></img>
+
+            </div>
+          
             </Card>
           </Grid>
         </Grid>

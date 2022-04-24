@@ -12,8 +12,6 @@ app.use(cors({
 
 }))
 app.use(express.json());
-
-app.use("/admin", userRouter);
 app.use("/user", userRouter);
 app.use("/equipment", equipmentRouter);
 

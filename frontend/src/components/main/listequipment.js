@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   Card,
   CardContent,
@@ -93,6 +94,17 @@ const ListEquipments = () => {
       </Grid>
     </div>
   );
+=======
+
+const ListProduct = () =>{
+return(
+  <div>
+
+  </div>
+)
+   
+    
+>>>>>>> 260994cefcd71c76c160772ceb5cf2d4d9de466b
 };
 
 export default ListEquipments;
