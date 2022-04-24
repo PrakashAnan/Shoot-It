@@ -1,6 +1,6 @@
 import { Button, Card, CardContent, Checkbox, Grid, Paper, TextField } from "@mui/material";
 import { Formik } from "formik";
-import app_config from "../../config";
+import app_config from "../config";
 import "./addequipment.css";
 
 const AddEquipment = () => {

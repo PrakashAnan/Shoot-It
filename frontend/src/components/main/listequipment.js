@@ -1,58 +1,98 @@
-// display the list product
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
-import { useState } from "react";
-import app_config from "../../config";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  CircularProgress,
+  Grid,
+  Skeleton,
+} from "@mui/material";
+import { useEffect, useState } from "react"; 
+import app_config from "../config";
+// import "./listproduct.css";
 
+const ListEquipments = () => {
+  const [equipmentArray, setEquipmentArray] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  const url = app_config.api_url;
 
-const ListProduct = () =>{
+  // Step 1 : Fetch Data from server
+  const fetchData = () => {
+    fetch(url + "/equipment/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setEquipmentArray(data);
+        setLoading(false);
+      });
+  };
 
-    const [productArray, setProductArray] = useState([]);
-    const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    // URL link
-    const url = app_config.api_url;
+  const displaySkeleton = () => {
+    return [1, 2, 3].map((e) => (
+      <Grid item md={3}>
+        <Skeleton
+          animation="wave"
+          variant="rectangular"
+          height={350}
+          width={243}
+        />
+        <Skeleton animation="wave" variant="text" className="mt-3" width={50} />
+        <Skeleton
+          animation="wave"
+          variant="text"
+          className="mt-3"
+          width={200}
+        />
+      </Grid>
+    ));
+  };
 
-       const FetchData = () => {
-        fetch(url + "/equipment/getall", {
-          method: "GET",
-          // data hmko send ni krna hai isliye get method use karte hai
-        })
-          .then((res) => res.json())
-          // res se json nikalne k liye
-          .then((data) => {
-            // dusra then jo hai json data read krne k liye
-            console.log(data);
-            setProductArray(data);
-            setLoading(false);
-            // data print krwa rhe hai
-          });
-      };
+  const displayEquipments = () => {
+    if (!loading) {
+      return equipmentArray.map((equipment) => (
+        <Grid item md={3}>
+          <Card>
+            <CardMedia
+              component="img"
+              height="300"
+              image={url+"/"+equipment.thumbnail}
+              alt={equipment.name}
+            />
+            <CardContent>
+              <p className="p-title">{equipment.name}</p>
+              <p className="text-muted">{equipment.variant}</p>
+              <span className="p-rating">
+                {equipment.rating} <i class="fas fa-star"></i>
+              </span>
+              &nbsp;&nbsp;
+              <span className="text-muted">({equipment.reviews})</span>
+              <p className="h4 mt-4">₹ {equipment.price}</p>
+            </CardContent>
+          </Card>
+        </Grid>
+      ));
+    } else {
+      return <CircularProgress  />;
+      return (
+        <Grid container spacing={6}>
+          {displaySkeleton()}
+        </Grid>
+      );
+    }
+  };
 
-
-
-      const displayProducts = () => {
-        if (!loading) {
-          return productArray.map((equipment) => (
-            <div className="container mt-2">
-            <Accordion>
-                <AccordionSummary>
-                  <h1>Display Products</h1>
-                </AccordionSummary>
-            <AccordionDetails>
-                <h1>hlwoo</h1>
-
-            </AccordionDetails>
-            </Accordion>
-            </div>
-          )
-          )}
-
-
-        }
-return <div>{displayProducts()}</div>
-
-   
-    
+  return (
+    <div className="container">
+      <h1>List Equipments</h1>
+      <Grid container spacing={6}>
+        {displayEquipments()}
+      </Grid>
+    </div>
+  );
 };
-export default ListProduct;
+
+export default ListEquipments;

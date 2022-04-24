@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, CardContent, Checkbox, FormControlLabel, Grid, Paper, TextField } from "@mui/material";
 import Swal from "sweetalert2";
 import { Formik } from "formik";
-import app_config from "../../config";
+import app_config from "../config";
 import "./signup.css";
 
 const url = app_config.api_url;

@@ -16,6 +16,7 @@ import ManageUser from "./components/admin/mangeUser";
 import DashBoard from "./components/admin/dashboard";
 import Login from "./components/main/login";
 import ListProduct from "./components/main/listequipment";
+import Signup1 from "./components/main/signup1";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           <Route element={<AdminProfile />} path="profile" />
           <Route element={<ManageEquipment />} path="manageequipment" />
           <Route element={< ManageUser />} path="manageuser" />
-          <Route element={< DashBoard />} path="dashboard" />
+          <Route element={< DashBoard />} path="dashboard"/>
+          <Route element={< Signup1 />} path="signup1"/>
 
         </Route>
 

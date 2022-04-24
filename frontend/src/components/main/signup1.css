@@ -1,0 +1,20 @@
+.image{
+    opacity: 80%;
+}
+.main_paper{
+margin-left: 10%;
+}
+.resgister{
+    margin-left: 20%;
+    font-weight: bold;
+    font-size: 30px;
+    color: green;
+    margin-top: 5%;
+}
+.go{
+    color: black;
+    margin-left: 25%;
+}
+.text1{
+    text-align: center;
+}

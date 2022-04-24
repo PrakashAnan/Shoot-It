@@ -1,7 +1,7 @@
 import { Card, CardContent, Grid, Paper, TextField, Button, Checkbox, FormControlLabel } from '@mui/material';
 import { Formik } from 'formik';
 import Swal from 'sweetalert2';
-import app_config from '../../config';
+import app_config from '../config';
 import "./login.css";
 
 
