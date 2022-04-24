@@ -75,6 +75,7 @@ const Login = () => {
                       />
 
                       <div className="mt-3">
+                        
                         <FormControlLabel
                           control={<Checkbox defaultChecked />}
                           label="Remember Me"
@@ -115,8 +116,19 @@ const Login = () => {
                   </p>
                 </div>
 
-                {/* <WhatsAppIcon /> */}
+         
               </CardContent>
+            </Card>
+          </Grid>
+          <Grid item md={4} sm={2}>
+            <Card className="mt-4">
+              
+              <div className="third">
+                
+            <img className='img-fluid sideimg'  src='https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''></img>
+
+            </div>
+          
             </Card>
           </Grid>
         </Grid>

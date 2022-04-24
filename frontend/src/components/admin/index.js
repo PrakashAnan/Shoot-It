@@ -2,6 +2,9 @@ import React from 'react';
 import {Outlet} from "react-router-dom";
 import Sidebar from '../sidebar'
 import { AccountCircleRounded, Dashboard, ManageAccounts } from "@mui/icons-material"
+import LoginIcon from '@mui/icons-material/Login';  
+import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
+import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
 
 
 const Admin = () => {
@@ -21,13 +24,13 @@ const Admin = () => {
         },
         {
             name:"ManageEquipment",
-            icon:<  ManageAccounts/>,
+            icon:<AdminPanelSettingsTwoToneIcon />,
             link:"/admin/manageequipment",
 
         },
         {
             name:"ManageUser",
-            icon:<AccountCircleRounded/>,
+            icon:<  ManageAccounts/>,
             link:"/admin/manageuser",
 
         },
@@ -45,7 +48,7 @@ const Admin = () => {
         },
         {
             name:"Login",
-            icon:<AccountCircleRounded/>,
+            icon:<LoginIcon/>,
             link:"/main/login",
 
         },

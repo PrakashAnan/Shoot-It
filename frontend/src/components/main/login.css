@@ -1,3 +1,4 @@
+
 .loginback{
     background-image: url("https://wallpaperaccess.com/full/4893706.jpg");
     background-repeat: no-repeat;
@@ -45,4 +46,31 @@
     font-weight: bold;
     font-family:sans-serif;
   }
+
+  .sideimg{
+    background-repeat: no-repeat;
+    background-size: cover;
+     height: 600px;
+     opacity: 0.5;
+     }
+
+  .third:hover {
+    background-color: rgb(72, 66, 66);
+    transition: background-color .5s;
+    cursor:pointer;	
+  }
+
+  .inline-background{
+    opacity: 0.7;
+    cursor:pointer;	
+    
+  }
+
+  /* .inline-background:hover{
+  background-color:orange;
+  color:red;
+	background-color:yellow;
+	cursor:pointer;	
+} */
+
   
