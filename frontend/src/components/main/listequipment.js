@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   Card,
   CardContent,
@@ -33,7 +32,7 @@ const ListEquipments = () => {
   }, []);
 
   const displaySkeleton = () => {
-    return [1, 2, 3].map((e) => (
+    return [1,2,3,4].map((e) => (
       <Grid item md={3}>
         <Skeleton
           animation="wave"
@@ -64,14 +63,18 @@ const ListEquipments = () => {
               alt={equipment.name}
             />
             <CardContent>
-              <p className="p-title">{equipment.name}</p>
-              <p className="text-muted">{equipment.variant}</p>
+              <p className="p-title">{equipment.title}</p>
+              <p className="text-muted">{equipment.type}</p>
+              <p className="text-muted">{equipment.price}</p>
+              <p className="text-muted">{equipment.brand}</p>
+              <p className="text-muted">{equipment.image}</p>
+              
               <span className="p-rating">
                 {equipment.rating} <i class="fas fa-star"></i>
               </span>
               &nbsp;&nbsp;
               <span className="text-muted">({equipment.reviews})</span>
-              <p className="h4 mt-4">₹ {equipment.price}</p>
+              {/* <p className="h4 mt-4">₹ {equipment.price}</p> */}
             </CardContent>
           </Card>
         </Grid>
@@ -91,20 +94,10 @@ const ListEquipments = () => {
       <h1>List Equipments</h1>
       <Grid container spacing={6}>
         {displayEquipments()}
+        {displaySkeleton()}
       </Grid>
     </div>
   );
-=======
-
-const ListProduct = () =>{
-return(
-  <div>
-
-  </div>
-)
-   
-    
->>>>>>> 260994cefcd71c76c160772ceb5cf2d4d9de466b
 };
 
 export default ListEquipments;
