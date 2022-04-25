@@ -7,10 +7,10 @@ const mySchema = new mongoose.Schema({
   price: Number,
   image: String,
   brand:String,
+  thumbnail:String, 
   rentable:{ type: Boolean, default: false },
-  rentPrice:Number,
-
   createdAt: { type: Date, default: new Date() },
+  
 });
 
 const myModel = mongoose.model("equipment", mySchema);

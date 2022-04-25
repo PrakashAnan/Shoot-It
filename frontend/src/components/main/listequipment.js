@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {
   Card,
   CardContent,
@@ -9,6 +8,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react"; 
 import app_config from "../config";
+
 // import "./listproduct.css";
 
 const ListEquipments = () => {
@@ -94,17 +94,6 @@ const ListEquipments = () => {
       </Grid>
     </div>
   );
-=======
-
-const ListProduct = () =>{
-return(
-  <div>
-
-  </div>
-)
-   
-    
->>>>>>> 260994cefcd71c76c160772ceb5cf2d4d9de466b
 };
 
 export default ListEquipments;

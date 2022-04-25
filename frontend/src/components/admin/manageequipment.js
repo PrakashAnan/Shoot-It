@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { useEffect, useState } from "react";
-import app_config from "../../config";
+import app_config from "../config";
 
 
 const ManageEquipment = () =>{
