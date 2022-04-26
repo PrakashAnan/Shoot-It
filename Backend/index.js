@@ -12,6 +12,8 @@ app.use(cors({
     origin : ['http://localhost:3000']
 
 }))
+
+app.use(express.static("./static"))
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/equipment", equipmentRouter);

@@ -60,7 +60,7 @@ const ListEquipments = () => {
             <CardMedia
               component="img"
               height="300"
-              image={url+"/"+equipment.thumbnail}
+              image={url+"/uploads/"+equipment.thumbnail}
               alt={equipment.name}
             />
             <CardContent>
