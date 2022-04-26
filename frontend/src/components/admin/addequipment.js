@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, Checkbox, Grid, Paper, TextField } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
+import Swal from "sweetalert2";
 import app_config from "../config";
 import "./addequipment.css";
 
@@ -31,7 +32,20 @@ const AddEquipment = () => {
       },
     }).then((res) => {
       console.log(res.status);
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Product added Successfully",
+        });
+
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
     });
+
   };
 
   const uploadThumbnail = (e) => {

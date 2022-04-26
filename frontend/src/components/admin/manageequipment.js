@@ -1,19 +1,7 @@
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Card, Grid, Paper ,Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import app_config from "../config";
-<<<<<<< HEAD
-=======
-import {
-    Grid,
-    Card,
-    CardContent,
-    Paper,
-    Button,
-    Checkbox,
-    FormControlLabel,
-  } from "@mui/material";
-
->>>>>>> 6b10e39d99b24023338ba96da5c5e63c8d3dce9c
+import toast, { Toaster } from "react-hot-toast";
 
 
 const ManageEquipment = () =>{
@@ -23,6 +11,9 @@ const ManageEquipment = () =>{
 
     // URL link
     const url = app_config.api_url;
+
+   
+    
 
        const FetchData = () => {
         fetch(url + "/equipment/getall", {
@@ -37,12 +28,33 @@ const ManageEquipment = () =>{
             setProductArray(data);
             setLoading(false);
             // data print krwa rhe hai
-          });
+          })
+      
+        
       };
 
       useEffect(() => {
         FetchData();
       }, []);
+
+      const deleteEquipment=(id)=>{
+        fetch(url+"/equipment/delete/"+id,
+        {method:"DELETE"})
+        .then((res)=>res.json)
+        .then((data)=>{
+            console.log(data)
+            FetchData()
+            toast.success("product deleted successfully...",
+            {
+                icon: '😁',
+                style: {
+                  borderRadius: '10px',
+                  background: '#333',
+                  color: '#fff',
+                },
+              })
+        })
+      }
 
 
 
@@ -51,8 +63,9 @@ const ManageEquipment = () =>{
           return productArray.map((equipment) => (
             <div className="container mt-2">
             <Accordion>
+              
                 <AccordionSummary>
-                  <h1>Display Products</h1>
+                  <h3> {equipment.title}</h3>
                   
                 </AccordionSummary>
             <AccordionDetails>
@@ -86,23 +99,27 @@ const ManageEquipment = () =>{
                   <Paper>
                     <Card>
                       <div className="check mt-2">
-                        {/* <h2>Equipment Update</h2> */}
+    
                         <Button
-                        variant="contained"
+                        variant="outlined"
                         color="success"
-                        className="w-100">
+                        className="w-100 mt-3">add item
 
                         </Button>
+
+
                         <Button
-                        variant="contained"
-                        color="success"
-                        className="w-100 mt-3">
+                        variant="outlined"
+                        color="error"
+                        className="w-100 mt-3"
+                        onClick={ e =>deleteEquipment(equipment._id)}>
+                          delete item
 
                         </Button>
                         <Button
                         variant="outlined"
                         color="success"
-                        className="w-100">
+                        className="w-100 mt-3">Edit/Update
 
                         </Button>
                       </div>
@@ -118,7 +135,9 @@ const ManageEquipment = () =>{
 
 
           };
-         return <div>{displayProducts()}</div>
+         return <div>
+           <h1>Product Details</h1>
+           {displayProducts()}</div>
 
 
 };
