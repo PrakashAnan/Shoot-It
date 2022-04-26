@@ -1,124 +1,144 @@
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Grid, Card } from "@mui/material";
 import { useEffect, useState } from "react";
 import app_config from "../config";
-<<<<<<< HEAD
-=======
-import {
-    Grid,
-    Card,
-    CardContent,
-    Paper,
-    Button,
-    Checkbox,
-    FormControlLabel,
-  } from "@mui/material";
-
->>>>>>> 6b10e39d99b24023338ba96da5c5e63c8d3dce9c
-
-
-const ManageEquipment = () =>{
-        
-    const [productArray, setProductArray] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    // URL link
-    const url = app_config.api_url;
-
-       const FetchData = () => {
-        fetch(url + "/equipment/getall", {
-          method: "GET",
-          // data hmko send ni krna hai isliye get method use karte hai
-        })
-          .then((res) => res.json())
-          // res se json nikalne k liye
-          .then((data) => {
-            // dusra then jo hai json data read krne k liye
-            console.log(data);
-            setProductArray(data);
-            setLoading(false);
-            // data print krwa rhe hai
-          });
-      };
-
-      useEffect(() => {
-        FetchData();
-      }, []);
+import toast, { Toaster } from "react-hot-toast";
 
 
 
-      const displayProducts = () => {
-        if (!loading) {
-          return productArray.map((equipment) => (
-            <div className="container mt-2">
-            <Accordion>
-                <AccordionSummary>
-                  <h1>Display Products</h1>
-                  
-                </AccordionSummary>
+const ManageEquipment = () => {
+
+  const [productArray, setProductArray] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // URL link
+  const url = app_config.api_url;
+
+  const fetchData = () => {
+    fetch(url + "/equipment/getall", {
+      method: "GET",
+      // data hmko send ni krna hai isliye get method use karte hai
+    })
+      .then((res) => res.json())
+      // res se json nikalne k liye
+      .then((data) => {
+        // dusra then jo hai json data read krne k liye
+        console.log(data);
+        setProductArray(data);
+        setLoading(false);
+        // data print krwa rhe hai
+      });
+  };
+
+  const deleteEquipment = (id) => {
+    fetch(url + "/equipment/delete/" + id, { method: "DELETE" })
+      .then((res) => res.json)
+      .then((data) => {
+        console.log(data)
+        fetchData()
+        toast.success("product deleted successfully...",
+          {
+            icon: '😁',
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+            },
+          })
+      })
+  }
+
+
+
+
+
+  useEffect(() => {
+    fetchData()
+  }, []);
+
+
+
+  const displayProducts = () => {
+    if (!loading) {
+      return productArray.map((equipment) => (
+        <div className="container mt-2">
+          <Accordion>
+            <AccordionSummary>
+              <h1>{equipment.title}</h1>
+
+            </AccordionSummary>
             <AccordionDetails>
-            <Grid container spacing={2}>
+              <Grid container spacing={2}>
                 <Grid item md={6}>
                   <ul class="list-group">
                     <li class="list-group-item">
                       EquipmentTitle:{equipment.title}
                     </li>
                     <li class="list-group-item">
-                    Price::{equipment.price}
+                      Price::{equipment.price}
                     </li>
                     <li class="list-group-item">
-                    Rent Price::{equipment.rentprice}
+                      Rent Price::{equipment.rentprice}
                     </li>
                     <li class="list-group-item">
-                    Model::{equipment.model}
+                      Model::{equipment.model}
                     </li>
                     <li class="list-group-item">
-                    Brand::{equipment.brand}
+                      Brand::{equipment.brand}
                     </li>
                     <li class="list-group-item">
-                    Type::{equipment.type}
+                      Type::{equipment.type}
                     </li>
                     <li class="list-group-item">
-                    Rentable::{equipment.rentable}
+                      Rentable::{equipment.rentable}
                     </li>
-                    </ul>
-                    </Grid>
-                    <Grid item md={6}>
+                  </ul>
+                </Grid>
+                <Grid item md={6}>
                   <Paper>
                     <Card>
                       <div className="check mt-2">
-                        {/* <h2>Equipment Update</h2> */}
-                        <Button
-                        variant="contained"
-                        color="success"
-                        className="w-100">
-
+                      <Button
+                          variant="outlined"
+                          color="success"
+                          className="w-100">Add item
                         </Button>
-                        <Button
-                        variant="contained"
-                        color="success"
-                        className="w-100 mt-3">
 
-                        </Button>
-                        <Button
-                        variant="outlined"
-                        color="success"
-                        className="w-100">
 
+                        <Button
+                          variant="outlined"
+                          color="success"
+                          className="w-100">update
                         </Button>
+
+                        <Button
+                          variant="outlined"
+                          color="success"
+                          className="w-100 mt-3"
+                          onClick={e => deleteEquipment(equipment._id)}>
+                          Delete
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          color="success"
+                          className="w-100">
+                        </Button>
+
                       </div>
                     </Card>
                   </Paper>
                 </Grid>
-                </Grid>
+              </Grid>
             </AccordionDetails>
-            </Accordion>
-            </div>
-          )
-          )}
+          </Accordion>
+        </div>
+      )
+      )
+    }
 
 
-          };
-         return <div>{displayProducts()}</div>
+  };
+  return <div>{displayProducts()}</div>
 
 
 };
