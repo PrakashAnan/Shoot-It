@@ -104,6 +104,7 @@ const ListEquipments = () => {
       <h1>List Equipments</h1>
       <Grid container spacing={6}>
         {displayEquipments()}
+       
       </Grid>
     </div>
   );

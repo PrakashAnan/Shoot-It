@@ -4,6 +4,7 @@ const mySchema = new mongoose.Schema({
   type:String,
   title: String,
   model: String,
+  
   price: Number,
   image: String,
   brand:String,
