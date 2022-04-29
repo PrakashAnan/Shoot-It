@@ -28,14 +28,12 @@ const ViewEquipment = () => {
   const displayEquipmentDetails = () =>{
     if(!loading) {
       return <div className="container">
-      <Grid container justifyContent="center"  spacing={6}>
+      <Grid container justifyContent="center"  spacing={3}>
         <Grid item md={4}>
           <Paper className="backside">
             <Card>
               <CardContent>
-                {equipmentData.price}
-                {equipmentData.equipmentname}
-                {equipmentData.brand}
+                
                 <img class="img-fluid" src="https://images.unsplash.com/photo-1622319977720-9949ac28adc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHklMjBjYW1lcmF8ZW58MHx8MHx8&w=1000&q=80" alt="" />
                 {/* yha image kaise aaega database se */}
                 <Button
@@ -60,7 +58,24 @@ const ViewEquipment = () => {
         <Grid item md={4}>
           <Card>
             <h2>Camera from shootit</h2>
-          </Card>
+          
+                <Card>{equipmentData.price}</Card>    
+                <Card>{equipmentData.name}</Card>
+                <Card>{equipmentData.brand}</Card>
+                <Card>{equipmentData.title}</Card>
+                <Card>{equipmentData.type}</Card>
+                <Card>{equipmentData.warranty}</Card>
+                <Card>{equipmentData.sensorfeature}</Card>
+                <Card>{equipmentData.delivery}</Card>
+                <Card>{equipmentData.equipmentname}</Card>
+                
+               
+                {/* {equipmentData.sensorfeature}
+                {equipmentData.lensfeature}
+                {equipmentData.delivery}
+                {equipmentData.equipmentname}
+                {equipmentData.brand} */}
+                </Card>
           <p>Review</p>
           <p>Rating</p>
           <p>Price</p>

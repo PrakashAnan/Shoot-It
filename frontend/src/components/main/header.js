@@ -24,7 +24,7 @@ import { useEffect, useState } from "react";
 
 const pages = [
   {
-    name: "Browse Vlogs",
+    name: "Browse Product",
     link: "/list",
   },
 ];
@@ -111,7 +111,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            VLOGGER
+            SHOOT'IT'
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -156,7 +156,7 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            VLOGGER
+            
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ name, link }) => (

@@ -4,13 +4,20 @@ const mySchema = new mongoose.Schema({
   type:String,
   title: String,
   model: String,
-  
   price: Number,
   image: String,
   brand:String,
+  comboOffer:String,
+  specification:String,
   thumbnail:String, 
+  availableOffer:Number,
+  delivery:String,
+  sensorfeature:String,
+  lensfeature:String,
+  warranty:String,
   rentable:{ type: Boolean, default: false },
   createdAt: { type: Date, default: new Date() },
+  
   
 });
 
