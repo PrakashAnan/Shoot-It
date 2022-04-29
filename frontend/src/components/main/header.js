@@ -37,12 +37,12 @@ const guestUser = [
   },
   {
     name: "Login",
-    link: "/login",
+    link: "/main/login",
     icon: <Login />,
   },
   {
     name: "Signup",
-    link: "/signup",
+    link: "/main/usersignup",
     icon: <AppRegistration />,
   },
 ];
@@ -65,7 +65,7 @@ const Header = () => {
   const logout = () => {
     setAnchorElUser(null);
     sessionStorage.removeItem("user");
-    navigate("/login");
+    navigate("/main/login");
   };
 
   const userMenu = [
