@@ -2,6 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Button, Paper, Grid, Car
 import { useEffect, useState } from "react";
 import app_config from "../config";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,6 +10,7 @@ const ManageEquipment = () => {
 
   const [productArray, setProductArray] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   // URL link
   const url = app_config.api_url;
@@ -100,6 +102,7 @@ const ManageEquipment = () => {
                       <Button
                           variant="outlined"
                           color="success"
+                          onClick={e => navigate('/admin/addequipment')}
                           className="w-100">Add item
                         </Button>
 
