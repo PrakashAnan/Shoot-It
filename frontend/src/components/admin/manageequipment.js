@@ -121,11 +121,6 @@ const ManageEquipment = () => {
                           Delete
                         </Button>
 
-                        <Button
-                          variant="outlined"
-                          color="success"
-                          className="w-100">
-                        </Button>
 
                       </div>
                     </Card>
