@@ -17,6 +17,7 @@ import DashBoard from "./components/admin/dashboard";
 import Login from "./components/main/login";
 import ListProduct from "./components/main/listequipment";
 import Signup1 from "./components/main/signup1";
+import ViewEquipment from "./components/main/viewEquipment";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route element={<UserSignup />} path="usersignup" />
           <Route element={<Login />} path="login" />
           <Route element={<ListProduct />} path="listproduct" />
+          <Route element={<ViewEquipment />} path="viewequipment" />
           
         </Route>
         <Route element={<User />} path="user">
