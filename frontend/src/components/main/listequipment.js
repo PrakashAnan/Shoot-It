@@ -1,7 +1,5 @@
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   CircularProgress,
@@ -9,7 +7,6 @@ import {
   Skeleton,
 } from "@mui/material";
 import { useEffect, useState } from "react"; 
-import { useNavigate } from "react-router-dom";
 import app_config from "../config";
 
 // import "./listproduct.css";
@@ -19,8 +16,6 @@ const ListEquipments = () => {
   const [loading, setLoading] = useState(true);
 
   const url = app_config.api_url;
-
-  const navigate = useNavigate();
 
   // Step 1 : Fetch Data from server
   const fetchData = () => {
@@ -64,7 +59,7 @@ const ListEquipments = () => {
           <Card>
             <CardMedia
               component="img"
-              height="100"
+              height="300"
               image={url+"/uploads/"+equipment.thumbnail}
               alt={equipment.name}
             />
@@ -82,15 +77,11 @@ const ListEquipments = () => {
               <span className="text-muted">({equipment.reviews})</span>
               {/* <p className="h4 mt-4">₹ {equipment.price}</p> */}
             </CardContent>
-            <CardActions>
-              <Button variant="outlined" onClick={(e) => navigate('/main/viewequipment/'+equipment._id)}>
-                View More
-              </Button>
-            </CardActions>
           </Card>
         </Grid>
       ));
     } else {
+      return <CircularProgress  />;
       return (
         <Grid container spacing={6}>
           {displaySkeleton()}
@@ -104,7 +95,7 @@ const ListEquipments = () => {
       <h1>List Equipments</h1>
       <Grid container spacing={6}>
         {displayEquipments()}
-       
+        {displaySkeleton()}
       </Grid>
     </div>
   );

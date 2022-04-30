@@ -38,7 +38,8 @@ function App() {
           <Route element={<Home />} path="home" />
           <Route element={<UserSignup />} path="usersignup" />
           <Route element={<Login />} path="login" />
-          <Route element={<ListProduct />} path="listproduct" />
+          <Route element={<ListProduct />} path="listproduct"/>
+          <Route element={<ViewEquipment />} path="viewequipment"/>
           
         </Route>
         <Route element={<User />} path="user">
