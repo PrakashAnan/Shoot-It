@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AccountCircle, Subscriptions, ManageAccounts } from "@mui/icons-material"
 
 const Header = () => {
-<<<<<<< HEAD
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [anchorElGuest, setAnchorElGuest] = useState(null);
@@ -56,8 +57,6 @@ const Header = () => {
     setAnchorElUser(null);
   };
 
-=======
->>>>>>> 1e80de2e39b0c23d74a7beb204aba3d6345fd5c9
   return (
     <div>Header</div>
   )
