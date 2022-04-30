@@ -40,17 +40,5 @@ router.delete("/delete/:id", (req, res) => {
     });
 });
 
-router.get("/getbyid/:id", (req, res) => {
-  Model.findById(req.params.id)
-    .then((data) => {
-      console.log("Equipment data fetched..");
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 
 module.exports = router;
