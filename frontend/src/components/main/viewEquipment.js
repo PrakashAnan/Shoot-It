@@ -2,6 +2,9 @@ import { Button, Card, CardContent, Grid, Paper, Skeleton } from "@mui/material"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import app_config from "../config";
+import "./viewequimpent.css";
+
+
 
 const ViewEquipment = () => {
   const { id } = useParams();
@@ -25,31 +28,32 @@ const ViewEquipment = () => {
     fetchData(); 
   }, []);
 
-  const displayEquipmentDetails = () =>{
+  const displayEquipmentDetails = () => {
     if(!loading) {
-      return <div className="container">
-      <Grid container justifyContent="center"  spacing={3}>
+      return <div className="container-fluid">
+      <Grid container justifyContent="center"spacing={1}>
         <Grid item md={4}>
           <Paper className="backside">
             <Card>
-              <CardContent>
-                
+              <CardContent>           
                 <img class="img-fluid" src="https://images.unsplash.com/photo-1622319977720-9949ac28adc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHklMjBjYW1lcmF8ZW58MHx8MHx8&w=1000&q=80" alt="" />
                 {/* yha image kaise aaega database se */}
+               
                 <Button
-                variant="outlined"
+                variant="contained"
                 className="mt-2"
                 color="success"
                 >
-                Add To Card
-                </Button>
+                  
+                ADD TO CART
+                </Button> &nbsp;&nbsp;
 
                 <Button
-                variant="outlined"
+                variant="contained"
                 color="error"
                 className="mt-2"
                 >
-                  By Now
+                  ORDER IT
                 </Button>
               </CardContent>
             </Card>
@@ -88,7 +92,7 @@ const ViewEquipment = () => {
           <h5>Available offers</h5>
           <Card>
             <h5>Special Price</h5>{" "}
-            <span>Extra ₹30 off(price inclusive of discount)</span>
+            <img className="bank_img" src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"/>
             <h5>Bank Offer</h5>{" "}
             <span>5% Cashback on Flipkart Axis Bank Card</span>
             <h5>Bank Offer</h5>{" "}
@@ -102,7 +106,7 @@ const ViewEquipment = () => {
               ₹100*
             </span>
             <h5>Combo Offer</h5>{" "}
-            <span>OfferBuy 2 items save 5%;Buy 3 or more save 10%</span>
+            <span>Offer   Buy 2 items save 5%;Buy 3 or more save 10%</span>
             <h5>Delivery</h5>
             <span>
               Usually delivered in 7 days? Enter pincode for exact delivery
