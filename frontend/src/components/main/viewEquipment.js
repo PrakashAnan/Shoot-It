@@ -59,15 +59,16 @@ const ViewEquipment = () => {
           <Card>
             <h2>Camera from shootit</h2>
           
-                      {equipmentData.price}
-                <Card>{equipmentData.name}</Card>
-                <Card>{equipmentData.brand}</Card>
-                <Card>{equipmentData.title}</Card>
-                <Card>{equipmentData.type}</Card>
-                <Card>{equipmentData.warranty}</Card>
-                <Card>{equipmentData.sensorfeature}</Card>
-                <Card>{equipmentData.delivery}</Card>
-                <Card>{equipmentData.equipmentname}</Card>
+                <Card><h1>Price</h1>{equipmentData.price}</Card> 
+                <Card><h1>EquipmentName</h1>{equipmentData.name}</Card>
+                <Card><h1>Brand</h1>{equipmentData.brand}</Card>
+                <Card><h1>Title</h1>{equipmentData.title}</Card>
+                <Card><h1>Type</h1>{equipmentData.type}</Card>
+                <Card><h1>Warranty</h1>{equipmentData.warranty}</Card>
+                <Card><h1>SensorFeature</h1>{equipmentData.sensorfeature}</Card>
+                <Card><h1>Delivery</h1>{equipmentData.delivery}</Card>
+                <Card><h1>EquipmentName</h1>{equipmentData.name}</Card>
+                
                 
                
                 {/* {equipmentData.sensorfeature}

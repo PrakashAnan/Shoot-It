@@ -28,6 +28,7 @@ const AddEquipment = () => {
     sensorfeature:"",
     lensfeature:"",
     warranty:"",
+    highlights:"",
     rentable: false,
     rentPrice: "",
     thumbnail: String,
@@ -217,6 +218,16 @@ const AddEquipment = () => {
                         label="warranty"
                         id="warranty"
                         value={values.warranty}
+                        onChange={handleChange}
+                      />
+                      <TextField
+                        className="w-100 mt-2"
+                        autoComplete="off"
+                        variant="filled"
+                        placeholder="Highlights"
+                        label="highlights"
+                        id="highlights"
+                        value={values.highlights}
                         onChange={handleChange}
                       />
                       <Checkbox
