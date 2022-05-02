@@ -1,5 +1,7 @@
 import {
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
   CircularProgress,
@@ -7,6 +9,7 @@ import {
   Skeleton,
 } from "@mui/material";
 import { useEffect, useState } from "react"; 
+import { Navigate } from "react-router-dom";
 import app_config from "../config";
 
 // import "./listproduct.css";
@@ -41,7 +44,7 @@ const ListEquipments = () => {
           height={350}
           width={243}
         />
-        <Skeleton animation="wave" variant="text" className="mt-3" width={50} />
+        <Skeleton animation="wave" variant="text" className="mt-3" width={50}/>
         <Skeleton
           animation="wave"
           variant="text"
@@ -77,6 +80,10 @@ const ListEquipments = () => {
               <span className="text-muted">({equipment.reviews})</span>
               {/* <p className="h4 mt-4">₹ {equipment.price}</p> */}
             </CardContent>
+            <CardActions>
+            <Button variant="outlined" onClick={(e) => Navigate('/main/viewequipment/'+equipment._id)}>View more</Button>
+            </CardActions>
+          
           </Card>
         </Grid>
       ));

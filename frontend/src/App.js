@@ -39,13 +39,8 @@ function App() {
           <Route element={<Home />} path="home" />
           <Route element={<UserSignup />} path="usersignup" />
           <Route element={<Login />} path="login" />
-<<<<<<< HEAD
           <Route element={<ListProduct />} path="listproduct"/>
           <Route element={<ViewEquipment />} path="viewequipment"/>
-=======
-          <Route element={<ListProduct />} path="listproduct" />
-          <Route element={<ViewEquipment />} path="viewequipment" />
->>>>>>> cceee1fcf527984d25e36963bc1fdd26179c04d7
           
         </Route>
         <Route element={<User />} path="user">
