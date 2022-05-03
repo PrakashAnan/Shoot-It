@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import app_config from "../config";
 
-// import "./listproduct.css";
 
 const ListEquipments = () => {
   const [equipmentArray, setEquipmentArray] = useState([]);

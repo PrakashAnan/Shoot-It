@@ -18,6 +18,7 @@ import Login from "./components/main/login";
 import ListProduct from "./components/main/listequipment";
 import Signup1 from "./components/main/signup1";
 import ViewEquipment from "./components/main/viewEquipment";
+import CheckOut from "./components/main/checkout";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route element={<Login />} path="login" />
           <Route element={<ListProduct />} path="listproduct" />
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
+          <Route element={<CheckOut />} path="checkout" />
           
         </Route>
         <Route element={<User />} path="user">

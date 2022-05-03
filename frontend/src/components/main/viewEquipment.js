@@ -296,10 +296,11 @@ const ViewEquipment = () => {
       ));
     } else {
       return (
+
         <Grid container spacing={6}>
           {displaySkeleton()}
-          
         </Grid>
+
       );
     }
   };
