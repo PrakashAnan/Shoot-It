@@ -7,6 +7,7 @@ const Main = () => {
     <div>
         <h1></h1>
         <Header />
+        
         <Outlet />
 
     </div>

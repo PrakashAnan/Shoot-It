@@ -14,6 +14,7 @@ const mySchema = new mongoose.Schema({
   sensorfeature:String,
   lensfeature:String,
   warranty:String,
+  highlights:String,
   rentable:{ type: Boolean, default: false },
   createdAt: { type: Date, default: new Date() },
   
