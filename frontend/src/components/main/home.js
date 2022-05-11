@@ -7,7 +7,7 @@ const Home = () => {
       <Paper>
         <Card>
           <CardContent>
-
+              
           </CardContent>
         </Card>
       </Paper>

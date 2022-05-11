@@ -36,14 +36,14 @@ const ListEquipments = () => {
 
   const displaySkeleton = () => {
     return [1,2,3,4].map((e) => (
-      <Grid item md={3}>
+      <Grid item md={4}>
         <Skeleton
           animation="wave"
           variant="rectangular"
-          height={350}
-          width={243}
+          height={250}
+          width={200}
         />
-        <Skeleton animation="wave" variant="text" className="mt-3" width={50}/>
+        <Skeleton animation="wave" variant="text" className="mt-3" width={200}/>
         <Skeleton
           animation="wave"
           variant="text"
@@ -57,11 +57,12 @@ const ListEquipments = () => {
   const displayEquipments = () => {
     if (!loading) {
       return equipmentArray.map((equipment) => (
-        <Grid item md={3}>
+        <Grid item md={4}>
           <Card>
             <CardMedia
+              className="img1"
               component="img"
-              height="300"
+              // height="150"
               image={url+"/uploads/"+equipment.thumbnail}
               alt={equipment.name}
             />

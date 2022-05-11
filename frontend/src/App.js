@@ -39,8 +39,8 @@ function App() {
           <Route element={<Header />} path="header" />
           <Route element={<Home />} path="home" />
           <Route element={<UserSignup />} path="usersignup" />
-          <Route element={<Login />} path="login" />
-          <Route element={<ListProduct />} path="listproduct" />
+          <Route element={<Login />} path="login"/>
+          <Route element={<ListProduct />} path="listproduct"/>
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
           <Route element={<CheckOut />} path="checkout" />
           
@@ -48,6 +48,9 @@ function App() {
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
         </Route>
+
+
+
       </Routes>
     </BrowserRouter>
   );
