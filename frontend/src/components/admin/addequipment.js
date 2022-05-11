@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import app_config from "../config";
 import "./addequipment.css";
@@ -32,7 +33,7 @@ const AddEquipment = () => {
     rentable: false,
     rentPrice: "",
     thumbnail: String,
-  };
+  }
 
   const url = app_config.api_url;
   const [thumbnail, setThumbnail] = useState("");
@@ -45,21 +46,17 @@ const AddEquipment = () => {
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then((res) => {
-        console.log(res.status);
-        if (res.status === 200) {
-          Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: "Product added Successfully",
-          });
-        }
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-      });
+    }).then((res) => {
+      console.log(res.status);
+      if (res.status == 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Added",
+        })
+      }
+    });
+
   };
 
   const uploadThumbnail = (e) => {
@@ -128,17 +125,7 @@ const AddEquipment = () => {
                         value={values.price}
                         onChange={handleChange}
                       />
-                      {/* <TextField
-                  className="w-100 mt-2"
-                  autoComplete="off"
-                  variant="filled"
-                  placeholder="Image"
-                  label="Image"
-                  id="image"
-                  type="file"
-                  value={values.image}
-                  onChange={handleChange}
-                /> */}
+                      
 
                       <TextField
                         className="w-100 mt-2"
