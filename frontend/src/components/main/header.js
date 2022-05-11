@@ -25,14 +25,14 @@ import { useEffect, useState } from "react";
 const pages = [
   {
     name: "Browse Product",
-    link: "/list",
+    link: "/main/listproduct",
   },
 ];
 
 const guestUser = [
   {
     name: "Home",
-    link: "/home",
+    link: "/main/home",
     icon: <Home />,
   },
   {
