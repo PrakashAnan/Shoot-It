@@ -16,8 +16,8 @@ footer.page-footer {
 }
 
 .view {
-    background: url("https://images.pexels.com/photos/225157/pexels-photo-225157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center;
-    -webkit-background-size: cover;
+    background: url("https://images7.alphacoders.com/313/313727.jpg")no-repeat center center;
+     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -51,4 +51,8 @@ input[type="text"]:focus:not([readonly])+label {
 }
 .navbar .btn-group .dropdown-menu a:active {
     color: #fff !important;
+}
+.input{
+    background-color: aqua;
+    font-family:red;
 }
