@@ -1,11 +1,11 @@
 import React from "react";
 
 const Footer = () => {
-  
+
   return (
     <div>
       <footer className="page-footer font-small unique-color-dark">
-        <div style="background-color: #6351ce;">
+        <div style={{backgroundColor:'#6351ce'}}>
           <div className="container">
             <div className="row py-4 d-flex align-items-center">
               <div className="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
@@ -46,7 +46,7 @@ const Footer = () => {
               <h6 className="text-uppercase font-weight-bold">Company name</h6>
               <hr
                 className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px;"
+                style={{width: '60px'}}
               />
               <p>
                 Here you can use rows and columns here to organize your footer
@@ -59,7 +59,7 @@ const Footer = () => {
               <h6 className="text-uppercase font-weight-bold">Products</h6>
               <hr
                 className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px;"
+                style={{width: '60px'}}
               />
               <p>
                 <a href="#!">MDBootstrap</a>
@@ -79,7 +79,7 @@ const Footer = () => {
               <h6 className="text-uppercase font-weight-bold">Useful links</h6>
               <hr
                 className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px;"
+                style={{width: '60px'}}
               />
               <p>
                 <a href="#!">Your Account</a>
@@ -99,7 +99,7 @@ const Footer = () => {
               <h6 className="text-uppercase font-weight-bold">Contact</h6>
               <hr
                 className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px;"
+                style={{width: '60px'}}
               />
               <p>
                 <i className="fa fa-home mr-3"></i> New Delhi, NY 800024, INDIA

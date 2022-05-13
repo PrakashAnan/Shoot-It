@@ -300,7 +300,6 @@ const ViewEquipment = () => {
         <Grid container spacing={6}>
           {displaySkeleton()}
         </Grid>
-
       );
     }
   };
@@ -312,3 +311,89 @@ const ViewEquipment = () => {
   );
 };
 export default ViewEquipment;
+
+
+// const ViewEquipment =() => {
+//   return(
+//     <div className="container">
+
+
+    
+
+//     <hr className="extra-margins" />
+
+//     <div className="row">
+     
+//         <div className="col-lg-4">
+        
+//             <div className="card wow fadeIn" data-wow-delay="0.2s">
+
+                
+//                 <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(3).jpg" alt="Card image cap" />
+
+                
+//                 <div className="card-body">
+  
+//                     <h4 className="card-title">This is title</h4>
+                    
+//                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//                     <a href="#" className="btn btn-info">Read more</a>
+//                 </div>
+
+//             </div>
+            
+//         </div>
+        
+//         <div className="col-lg-4">
+            
+//             <div className="card wow fadeIn" data-wow-delay="0.4s">
+
+               
+//                 <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(1).jpg" alt="Card image cap" />
+
+                
+//                 <div className="card-body">
+                    
+//                     <h4 className="card-title">This is title</h4>
+                  
+//                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//                     <a href="#" className="btn btn-info">Read more</a>
+//                 </div>
+
+            
+//         </div>
+      
+//         <div className="col-lg-4">
+           
+//             <div className="card wow fadeIn" data-wow-delay="0.6s">
+
+               
+//                 <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(4).jpg" alt="Card image cap" />
+
+                
+//                 <div className="card-body">
+                    
+//                     <h4 className="card-title">This is title</h4>
+                    
+//                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//                     <a href="#" class="btn btn-info">Read more</a>
+//                 </div>
+
+//             </div>
+            
+//         </div>
+        
+//     </div>
+   
+// </div>
+
+
+
+
+
+// </div>
+
+//     )
+// }
+
+// export default ViewEquipment

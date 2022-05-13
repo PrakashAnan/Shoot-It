@@ -35,6 +35,7 @@ const ListEquipments = () => {
   }, []);
 
   const displaySkeleton = () => {
+    
     return [1,2,3,4].map((e) => (
       <Grid item md={4}>
         <Skeleton
@@ -43,8 +44,12 @@ const ListEquipments = () => {
           height={250}
           width={200}
         />
+<<<<<<< HEAD
         <Skeleton animation="wave" variant="text" className="mt-3" width={50}/>
         
+=======
+        <Skeleton animation="wave" variant="text" className="mt-3" width={200}/>
+>>>>>>> b9a36d204bab0ccb7ce80fc78a4e737bf8b731a0
         <Skeleton
           animation="wave"
           variant="text"
@@ -63,7 +68,11 @@ const ListEquipments = () => {
             <CardMedia
               className="img1"
               component="img"
+<<<<<<< HEAD
               height="200"
+=======
+              // height="150"
+>>>>>>> b9a36d204bab0ccb7ce80fc78a4e737bf8b731a0
               image={url+"/uploads/"+equipment.thumbnail}
               alt={equipment.name}
             />
