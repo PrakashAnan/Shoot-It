@@ -5,7 +5,6 @@ import "./home.css"
 const Home = () => {
   return (
     <div>
-<<<<<<< HEAD
     <header>
 
 
@@ -58,15 +57,6 @@ const Home = () => {
           </div>
         </li>
       </ul>
-=======
-      <Paper>
-        <Card>
-          <CardContent>
-              
-          </CardContent>
-        </Card>
-      </Paper>
->>>>>>> f445648d48190b43f8e3fb57fb8bbbb05cb0ca58
     </div>
   </div>
 </nav>

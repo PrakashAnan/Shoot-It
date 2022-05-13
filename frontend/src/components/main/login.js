@@ -138,7 +138,7 @@ const Login = () => {
     // </div>
 
     <header>
-      <navbar className="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      {/* <navbar className="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
         <div className="container">
           <a className="navbar-brand" href="#">
             <strong>Login Page</strong>
@@ -184,7 +184,7 @@ const Login = () => {
             </form>
           </div>
         </div>
-      </navbar>
+      </navbar> */}
 
       {/* <!--Intro Section--> */}
       <section className="view intro-2">
