@@ -187,7 +187,7 @@ const Login = () => {
       </navbar> */}
 
       {/* <!--Intro Section--> */}
-      <section className="view intro-2">
+      <section className="start intro-2">
         <div className="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
           <div className="container">
             <div className="row">
@@ -233,9 +233,9 @@ const Login = () => {
                     </div>
 
                     <div className="text-center">
-                      <Button className="btn purple-gradient btn-lg">
+                      <button className="btn purple-gradient btn-lg">
                         Sign up
-                      </Button>
+                      </button>
                       {/* <hr> */}
                       <div className="inline-ul text-center d-flex justify-content-center">
                         <a className="p-2 m-2 fa-lg tw-ic">
@@ -248,11 +248,10 @@ const Login = () => {
                           <i className="fab fa-instagram white-text"> </i>
                         </a>
                       </div>
-                      {/* </hr> */}
+                      
                     </div>
                   </div>
                 </div>
-                {/* <!--/Form with header--> */}
               </div>
             </div>
           </div>

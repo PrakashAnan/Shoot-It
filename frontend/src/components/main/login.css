@@ -75,7 +75,7 @@
 
         body,
         header,
-        .view {
+        .strt {
           height: 100vh;
         }
 
@@ -83,7 +83,7 @@
           html,
           body,
           header,
-          .view {
+          .strt {
             height: 815px;
           }
         }
@@ -92,7 +92,7 @@
           html,
           body,
           header,
-          .view  {
+          .strt {
             height: 650px;
           }
         }
