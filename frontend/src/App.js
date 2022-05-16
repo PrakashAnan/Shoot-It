@@ -28,10 +28,9 @@ function App() {
           <Route element={<AddEquipment />} path="addequipment" />
           <Route element={<AdminProfile />} path="profile" />
           <Route element={<ManageEquipment />} path="manageequipment" />
-          <Route element={< ManageUser />} path="manageuser" />
-          <Route element={< DashBoard />} path="dashboard"/>
-          <Route element={< Signup1 />} path="signup1"/>
-
+          <Route element={<ManageUser />} path="manageuser" />
+          <Route element={<DashBoard />} path="dashboard" />
+          <Route element={<Signup1 />} path="signup1" />
         </Route>
 
         <Route element={<Main />} path="main">
@@ -39,18 +38,14 @@ function App() {
           <Route element={<Header />} path="header" />
           <Route element={<Home />} path="home" />
           <Route element={<UserSignup />} path="usersignup" />
-          <Route element={<Login />} path="login"/>
-          <Route element={<ListProduct />} path="listproduct"/>
+          <Route element={<Login />} path="login" />
+          <Route element={<ListProduct />} path="listproduct" />
           <Route element={<ViewEquipment />} path="viewequipment" />
           <Route element={<CheckOut />} path="checkout" />
-          
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
         </Route>
-
-
-
       </Routes>
     </BrowserRouter>
   );
