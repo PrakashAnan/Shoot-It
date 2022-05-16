@@ -8,16 +8,16 @@ import {
   Grid,
   Skeleton,
 } from "@mui/material";
-import { useEffect, useState } from "react"; 
-import { Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import app_config from "../config";
-
 
 const ListEquipments = () => {
   const [equipmentArray, setEquipmentArray] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const url = app_config.api_url;
+  const navigate = useNavigate();
 
   // Step 1 : Fetch Data from server
   const fetchData = () => {
@@ -35,8 +35,7 @@ const ListEquipments = () => {
   }, []);
 
   const displaySkeleton = () => {
-    
-    return [1,2,3,4].map((e) => (
+    return [1, 2, 3, 4].map((e) => (
       <Grid item md={4}>
         <Skeleton
           animation="wave"
@@ -44,8 +43,8 @@ const ListEquipments = () => {
           height={250}
           width={200}
         />
-        <Skeleton animation="wave" variant="text" className="mt-3" width={50}/>
-        
+        <Skeleton animation="wave" variant="text" className="mt-3" width={50} />
+
         <Skeleton
           animation="wave"
           variant="text"
@@ -60,37 +59,39 @@ const ListEquipments = () => {
     if (!loading) {
       return equipmentArray.map((equipment) => (
         <Grid item md={4}>
-          <Card>
-            <CardMedia
-              className="img1"
-              component="img"
+          <div className="card">
+            <img
+              className="card-img-top"
               height="200"
-              image={url+"/uploads/"+equipment.thumbnail}
+              src={url + "/uploads/" + equipment.thumbnail}
               alt={equipment.name}
             />
-            <CardContent>
+            <div className="card-body">
               <p className="p-title">{equipment.title}</p>
               <p className="text-muted">{equipment.type}</p>
               <p className="text-muted">{equipment.price}</p>
               <p className="text-muted">{equipment.brand}</p>
               <p className="text-muted">{equipment.image}</p>
-              
               <span className="p-rating">
                 {equipment.rating} <i class="fas fa-star"></i>
               </span>
               &nbsp;&nbsp;
-              <span className="text-muted">({equipment.reviews})</span>
+              <span className="text-muted">{equipment.reviews}</span>
               {/* <p className="h4 mt-4">₹ {equipment.price}</p> */}
-            </CardContent>
-            <CardActions>
-            <Button variant="outlined" onClick={(e) => Navigate('/main/viewequipment/'+equipment._id)}>View more</Button>
-            </CardActions>
-          
-          </Card>
+              <br />
+              <button
+                className="btn btn-outline-primary"
+                onClick={(e) =>
+                  navigate("/main/viewequipment/" + equipment._id)
+                }
+              >
+                View more
+              </button>
+            </div>
+          </div>
         </Grid>
       ));
     } else {
-      return <CircularProgress  />;
       return (
         <Grid container spacing={6}>
           {displaySkeleton()}
@@ -104,7 +105,6 @@ const ListEquipments = () => {
       <h1>List Equipments</h1>
       <Grid container spacing={6}>
         {displayEquipments()}
-        {displaySkeleton()}
       </Grid>
     </div>
   );

@@ -9,6 +9,7 @@ import {
   FormControlLabel,
 } from "@mui/material";
 import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import app_config from "../config";
 import "./login.css";
@@ -20,6 +21,8 @@ const Login = () => {
     username: "",
     password: "",
   };
+
+  const navigate = useNavigate();
 
   const loginSubmit = (values) => {
     console.log(values);
@@ -36,7 +39,13 @@ const Login = () => {
           icon: "success",
           title: "Success",
           text: "Loggedin Successfully",
-        })
+        });
+        res.json((data) => {
+          if (data.isAdmin) {
+            sessionStorage.getItem("admin", JSON.stringify(data));
+            navigate("/admin/addequipment");
+          }
+        });
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",
@@ -48,7 +57,7 @@ const Login = () => {
   };
 
   return (
-     <div>
+    <div>
       <Paper className="loginback">
         <Grid container justifyContent="center">
           <Grid item md={4} sm={2}>
@@ -77,7 +86,6 @@ const Login = () => {
                       />
 
                       <div className="mt-3">
-
                         <FormControlLabel
                           control={<Checkbox defaultChecked />}
                           label="Remember Me"
@@ -117,26 +125,23 @@ const Login = () => {
                     Don't Have An Account?<a href="">Sign up</a>
                   </p>
                 </div>
-
               </CardContent>
             </Card>
           </Grid>
           <Grid item md={4} sm={2}>
             <Card className="mt-4">
-
               <div className="third">
-
-            <img className='img-fluid sideimg'  src='https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt=''></img>
-
-            </div>
-
+                <img
+                  className="img-fluid sideimg"
+                  src="https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  alt=""
+                ></img>
+              </div>
             </Card>
           </Grid>
         </Grid>
       </Paper>
     </div>
-
-   
   );
 };
 

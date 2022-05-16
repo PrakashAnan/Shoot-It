@@ -19,12 +19,20 @@ import ListProduct from "./components/main/listequipment";
 import Signup1 from "./components/main/signup1";
 import ViewEquipment from "./components/main/viewEquipment";
 import CheckOut from "./components/main/checkout";
+import AdminAuthenticator from "./components/adminAuthenticator";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Admin />} path="admin">
+        <Route
+          element={
+            <AdminAuthenticator>
+              <Admin />
+            </AdminAuthenticator>
+          }
+          path="admin"
+        >
           <Route element={<AddEquipment />} path="addequipment" />
           <Route element={<AdminProfile />} path="profile" />
           <Route element={<ManageEquipment />} path="manageequipment" />
@@ -40,7 +48,7 @@ function App() {
           <Route element={<UserSignup />} path="usersignup" />
           <Route element={<Login />} path="login" />
           <Route element={<ListProduct />} path="listproduct" />
-          <Route element={<ViewEquipment />} path="viewequipment" />
+          <Route element={<ViewEquipment />} path="viewequipment/:id" />
           <Route element={<CheckOut />} path="checkout" />
         </Route>
         <Route element={<User />} path="user">
