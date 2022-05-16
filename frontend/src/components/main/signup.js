@@ -3,7 +3,7 @@
 // import Swal from "sweetalert2";
 // import { Formik } from "formik";
 // import app_config from "../config";
-// import "./signup.css";
+import "./signup.css";
 
 // const url = app_config.api_url;
 
@@ -153,11 +153,11 @@
 
 const UserSignup = () => {
   return (
-    <div>
+    <div className="signup_div">
       <header>
-        <div className="intro">
-          <div className="mask rgba-gradient d-flex justify-content-center align-items-center">
-            <div className="container">
+        <div className="">
+          <div className="mask intro rgba-gradient d-flex justify-content-center align-items-center">
+            <div className="container ">
               <div className="row mt-5">
                 <div className="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
                   <h1

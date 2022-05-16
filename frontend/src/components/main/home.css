@@ -1,4 +1,4 @@
-.nopadding {
+/* .nopadding {
     margin-top: 0 !important;
 }
 
@@ -16,13 +16,8 @@ footer.page-footer {
 }
 
 .view {
-<<<<<<< HEAD
     background: url("https://images7.alphacoders.com/313/313727.jpg")no-repeat center center;
      -webkit-background-size: cover;
-=======
-    /* background: url("https://images.pexels.com/photos/225157/pexels-photo-225157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center center; */
-    -webkit-background-size: cover;
->>>>>>> b9a36d204bab0ccb7ce80fc78a4e737bf8b731a0
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -60,4 +55,4 @@ input[type="text"]:focus:not([readonly])+label {
 .input{
     background-color: aqua;
     font-family:red;
-}
+} */
