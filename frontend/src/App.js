@@ -19,19 +19,26 @@ import ListProduct from "./components/main/listequipment";
 import Signup1 from "./components/main/signup1";
 import ViewEquipment from "./components/main/viewEquipment";
 import CheckOut from "./components/main/checkout";
+import AdminAuthenticator from "./components/adminAuthenticator";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Admin />} path="admin">
+        <Route
+          element={
+            <AdminAuthenticator>
+              <Admin />
+            </AdminAuthenticator>
+          }
+          path="admin"
+        >
           <Route element={<AddEquipment />} path="addequipment" />
           <Route element={<AdminProfile />} path="profile" />
           <Route element={<ManageEquipment />} path="manageequipment" />
-          <Route element={< ManageUser />} path="manageuser" />
-          <Route element={< DashBoard />} path="dashboard"/>
-          <Route element={< Signup1 />} path="signup1"/>
-
+          <Route element={<ManageUser />} path="manageuser" />
+          <Route element={<DashBoard />} path="dashboard" />
+          <Route element={<Signup1 />} path="signup1" />
         </Route>
 
         <Route element={<Main />} path="main">
@@ -39,18 +46,19 @@ function App() {
           <Route element={<Header />} path="header" />
           <Route element={<Home />} path="home" />
           <Route element={<UserSignup />} path="usersignup" />
+<<<<<<< HEAD
           <Route element={<Login />} path="login"/>
           <Route element={<ListProduct />} path="listproduct"/>
+=======
+          <Route element={<Login />} path="login" />
+          <Route element={<ListProduct />} path="listproduct" />
+>>>>>>> 99609c1c071832a982ae9d2dd165e0e57888c555
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
           <Route element={<CheckOut />} path="checkout" />
-          
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
         </Route>
-
-
-
       </Routes>
     </BrowserRouter>
   );
