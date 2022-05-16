@@ -55,7 +55,6 @@ const Login = () => {
     //         <Card className="mt-4 mb-4">
     //           <CardContent className="inline-background">
     //             <p className="h3 text-center mb-3 mt-3">Login Here</p>
-
     //             <Formik initialValues={loginForm} onSubmit={loginSubmit}>
     //               {({ values, handleChange, handleSubmit }) => (
     //                 <form on onSubmit={handleSubmit}>
@@ -187,7 +186,7 @@ const Login = () => {
       </navbar> */}
 
       {/* <!--Intro Section--> */}
-      <section className="start intro-2">
+      <section className="view intro_2" style={{height: '100vh'}}>
         <div className="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
           <div className="container">
             <div className="row">

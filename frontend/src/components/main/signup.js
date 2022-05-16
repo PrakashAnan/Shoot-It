@@ -153,18 +153,12 @@ import "./signup.css";
 
 const UserSignup = () => {
   return (
-    <div>
+    <div className="signup_div">
       <header>
         <div className="">
-          <div className="mask rgba-gradient d-flex justify-content-center align-items-center">
-            <div className="container">
-              <div className="row align-items-center mt-5">
+            <div className="container ">
+              <div className="row mt-5">
                 <div className="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-                  <h1
-                    className="h1-responsive font-weight-bold wow fadeInLeft"
-                    data-wow-delay="0.3s"
-                  >
-                    Sign up right now!{" "}
                   </h1>
                   <hr className="hr-light wow fadeInLeft" data-wow-delay="0.3s" />
                   <hr className="hr-light wow fadeInLeft" data-wow-delay="0.3s" />

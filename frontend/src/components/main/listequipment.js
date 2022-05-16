@@ -44,7 +44,8 @@ const ListEquipments = () => {
           height={250}
           width={200}
         />
-        <Skeleton animation="wave" variant="text" className="mt-3" width={200}/>
+        <Skeleton animation="wave" variant="text" className="mt-3" width={50}/>
+        
         <Skeleton
           animation="wave"
           variant="text"
@@ -63,7 +64,7 @@ const ListEquipments = () => {
             <CardMedia
               className="img1"
               component="img"
-              // height="150"
+              height="200"
               image={url+"/uploads/"+equipment.thumbnail}
               alt={equipment.name}
             />

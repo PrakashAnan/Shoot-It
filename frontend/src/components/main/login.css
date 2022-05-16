@@ -72,16 +72,13 @@
 	background-color:yellow;
 	cursor:pointer;	
 } */
-
-        body,
         header,
         .strt {
           height: 100vh;
         }
 
         @media (max-width: 740px) {
-          html,
-          body,
+          
           header,
           .strt {
             height: 815px;
@@ -89,17 +86,18 @@
         }
 
         @media (min-width: 800px) and (max-width: 850px) {
-          html,
-          body,
+          
           header,
           .strt {
             height: 650px;
           }
         }
 
-        .intro-2 {
+        .intro_2 {
             background: url("http://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img%20(11).jpg") no-repeat center center;
             background-size: cover;
+            height: 100vh;
+        
         }
         .top-nav-collapse {
             background-color: #3f51b5 !important;
