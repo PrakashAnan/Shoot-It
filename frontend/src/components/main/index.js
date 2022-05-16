@@ -9,11 +9,9 @@ const Main = () => {
     <div>
         
         <Header />
-        {/* <Footer /> */}
-        
-        
+      
         <Outlet />
-        <Footer/>
+        <Footer />
 
     </div>
   )

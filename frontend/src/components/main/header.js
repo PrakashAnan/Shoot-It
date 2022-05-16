@@ -48,7 +48,7 @@ const guestUser = [
   },
   {
     name: "AddToCart",
-    link: "/main/usersignup",
+    link: "/main/checkout",
     icon:<ShoppingCart/>,
   },
 ];
