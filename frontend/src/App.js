@@ -46,15 +46,10 @@ function App() {
           <Route element={<Header />} path="header" />
           <Route element={<Home />} path="home" />
           <Route element={<UserSignup />} path="usersignup" />
-<<<<<<< HEAD
-          <Route element={<Login />} path="login"/>
-          <Route element={<ListProduct />} path="listproduct"/>
-=======
           <Route element={<Login />} path="login" />
           <Route element={<ListProduct />} path="listproduct" />
->>>>>>> 99609c1c071832a982ae9d2dd165e0e57888c555
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
-          <Route element={<CheckOut />} path="checkout" />
+          <Route element={<CheckOut />} path="checkout/:id" />
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />

@@ -1,6 +1,6 @@
 import { Button, Card, CardContent, Grid, Paper, Skeleton } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import app_config from "../config";
 import "./viewequimpent.css";
 
@@ -13,6 +13,7 @@ const ViewEquipment = () => {
   const [loading, setLoading] = useState(true);
 
   const url = app_config.api_url;
+  const navigate = useNavigate();
 
   const fetchData = () => {
     fetch(url + "/equipment/getbyid/"+id)
@@ -31,18 +32,25 @@ const ViewEquipment = () => {
   const displayEquipmentDetails = () => {
     if(!loading) {
       return <div className="container-fluid">
-      <Grid container justifyContent="center"spacing={1}>
+      <Grid container justifyContent="center"spacing={0}>
         <Grid item md={4}>
           <Paper className="backside">
             <Card>
-              <CardContent>           
-                <img class="img-fluid" src="https://images.unsplash.com/photo-1622319977720-9949ac28adc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHklMjBjYW1lcmF8ZW58MHx8MHx8&w=1000&q=80" alt="" />
-                {/* yha image kaise aaega database se */}
-               
+              <CardContent> 
+
+              <img
+              className="card-img-top"
+              height="600"
+              src={url + "/uploads/" + equipmentData.thumbnail}
+              alt={equipmentData.name}
+              // backend se img kAise aaegaa
+
+            />
                 <Button
                 variant="contained"
                 className="mt-2"
                 color="success"
+                
                 >
                   
                 ADD TO CART
@@ -52,6 +60,9 @@ const ViewEquipment = () => {
                 variant="contained"
                 color="error"
                 className="mt-2"
+                onClick={(e) =>
+                  navigate("/main/checkout/"+ equipmentData._id)
+                }
                 >
                   ORDER IT
                 </Button>
@@ -75,22 +86,13 @@ const ViewEquipment = () => {
                 
                 
                
-                {/* {equipmentData.sensorfeature}
+                 {equipmentData.sensorfeature}
                 {equipmentData.lensfeature}
                 {equipmentData.delivery}
                 {equipmentData.equipmentname}
-                {equipmentData.brand} */}
+                {equipmentData.brand} 
                 </Card>
-          <p>Review</p>
-          <p>Rating</p>
-          <p>Price</p>
-          <p>Coupons for you</p>
-          <span>
-            Special PriceGet extra 20% off upto ₹100 on 1 item(s) (price
-            inclusive of discount)
-          </span>
-          <h5>Available offers</h5>
-          <Card>
+                <Card>
             <h5>Special Price</h5>{" "}
             <img className="bank_img" src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"/>
             <h5>Bank Offer</h5>{" "}
@@ -261,6 +263,15 @@ const ViewEquipment = () => {
               </p>
             </ol>
           </Card>
+          <p>Review</p>
+          <p>Rating</p>
+          <p>Price</p>
+          <p>Coupons for you</p>
+          <span>
+            Special PriceGet extra 20% off upto ₹100 on 1 item(s) (price
+            inclusive of discount)
+          </span>
+          <h5>Available offers</h5>
         </Grid>
       </Grid>
     </div>
@@ -313,87 +324,4 @@ const ViewEquipment = () => {
 export default ViewEquipment;
 
 
-// const ViewEquipment =() => {
-//   return(
-//     <div className="container">
-
-
-    
-
-//     <hr className="extra-margins" />
-
-//     <div className="row">
-     
-//         <div className="col-lg-4">
-        
-//             <div className="card wow fadeIn" data-wow-delay="0.2s">
-
-                
-//                 <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(3).jpg" alt="Card image cap" />
-
-                
-//                 <div className="card-body">
   
-//                     <h4 className="card-title">This is title</h4>
-                    
-//                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                     <a href="#" className="btn btn-info">Read more</a>
-//                 </div>
-
-//             </div>
-            
-//         </div>
-        
-//         <div className="col-lg-4">
-            
-//             <div className="card wow fadeIn" data-wow-delay="0.4s">
-
-               
-//                 <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(1).jpg" alt="Card image cap" />
-
-                
-//                 <div className="card-body">
-                    
-//                     <h4 className="card-title">This is title</h4>
-                  
-//                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                     <a href="#" className="btn btn-info">Read more</a>
-//                 </div>
-
-            
-//         </div>
-      
-//         <div className="col-lg-4">
-           
-//             <div className="card wow fadeIn" data-wow-delay="0.6s">
-
-               
-//                 <img className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20(4).jpg" alt="Card image cap" />
-
-                
-//                 <div className="card-body">
-                    
-//                     <h4 className="card-title">This is title</h4>
-                    
-//                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                     <a href="#" class="btn btn-info">Read more</a>
-//                 </div>
-
-//             </div>
-            
-//         </div>
-        
-//     </div>
-   
-// </div>
-
-
-
-
-
-// </div>
-
-//     )
-// }
-
-// export default ViewEquipment
