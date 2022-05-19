@@ -1,5 +1,59 @@
 import { Button, Card, Grid, Paper, TextField } from "@mui/material";
+import Swal from "sweetalert2";
+import app_config from "../config";
+import { Formik } from "formik";
+
+
+
 const CheckOut = () => {
+
+  const url = app_config.api_url;
+
+  const checkoutForm = {
+    firstname: "",
+    lastname:"",
+    username: "",
+    address:"",
+    address2:"",
+    email:"",
+  
+  };
+
+
+  
+  const checkoutSubmit = (values) => {
+    console.log(values);
+    fetch(url + "/order/add", {
+      method: "POST",
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
+      console.log(res.status);
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Loggedin Successfully",
+        });
+        // res.json((data) => {
+        //   if (data.isAdmin) {
+        //     sessionStorage.setItem("admin", JSON.stringify(data));
+        //     navigate("/admin/addequipment");
+        //   }
+        // });
+      } else if (res.status === 300) {
+        Swal.fire({
+          icon: "error",
+          title: "Failed",
+          text: "Loggedin Failed",
+        });
+      }
+    });
+  };
+
+
     return(
         <div>
          <main class="mt-5 pt-4">
@@ -16,19 +70,22 @@ const CheckOut = () => {
 
           
           <div class="card">
+            <Formik initialValues={checkoutForm} onSubmit={checkoutSubmit}>
+                  {({ values, handleChange, handleSubmit }) => (
 
            
-            <form className="card-body">
-
-              
+            <form onSubmit={checkoutSubmit} className="card-body">
               <div class="row">
-
-                
                 <div class="col-md-6 mb-2">
 
                  
                   <div class="md-form ">
-                    <input type="text" id="firstName" class="form-control" />
+                    <input type="text"
+                    id="firstname"
+                    className="form-control"
+                    onChange={handleChange}
+                    value={values.firstname}
+                       />
                     <label for="firstName" class="">First name</label>
                   </div>
 
@@ -38,7 +95,12 @@ const CheckOut = () => {
 
                   
                   <div class="md-form">
-                    <input type="text" id="lastName" class="form-control" />
+                    <input type="text"
+                    id="lastname" 
+                    className="form-control"
+                    onChange={handleChange}
+                    value={values.lastname}
+                    />
                     <label for="lastName" class="">Last name</label>
                   </div>
 
@@ -51,24 +113,46 @@ const CheckOut = () => {
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">@</span>
                 </div>
-                <input type="text" class="form-control py-0" placeholder="Username" aria-describedby="basic-addon1" />
+                <input type="text"
+                class="form-control py-0" 
+                placeholder="Username" 
+                aria-describedby="basic-addon1"
+                />
               </div>
 
             
               <div class="md-form mb-5">
-                <input type="text" id="email" class="form-control" placeholder="youremail@example.com" />
+                <input type="text"
+                id="email" 
+                class="form-control" 
+                placeholder="youremail@example.com" 
+                onChange={handleChange}
+                value={values.email}
+                />
                 <label for="email" class="">Email (optional)</label>
               </div>
 
             
               <div class="md-form mb-5">
-                <input type="text" id="address" class="form-control" placeholder="1234 Main St" />
+                <input type="text" 
+                id="address" 
+                class="form-control" 
+                placeholder="1234 Main St" 
+                onChange={handleChange}
+                value={values.address}
+                />
                 <label for="address" class="">Address</label>
               </div>
 
               
               <div class="md-form mb-5">
-                <input type="text" id="address-2" class="form-control" placeholder="Apartment or suite" />
+                <input type="text" 
+                id="address-2" 
+                class="form-control" 
+                placeholder="Apartment or suite" 
+                onChange={handleChange}
+                value={values.address-2}
+                />
                 <label for="address-2" class="">Address 2 (optional)</label>
               </div>
 
@@ -177,9 +261,14 @@ const CheckOut = () => {
                 </div>
               </div>
               <hr class="mb-4" />
-              <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+              <button class="btn btn-primary btn-lg btn-block"
+              type="submit">
+              Continue to checkout
+              </button>
 
             </form>
+             )}
+             </Formik>
 
          
         

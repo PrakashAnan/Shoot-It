@@ -50,7 +50,6 @@ const ViewEquipment = () => {
                 variant="contained"
                 className="mt-2"
                 color="success"
-                
                 >
                   
                 ADD TO CART

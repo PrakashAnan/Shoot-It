@@ -42,7 +42,7 @@ const Login = () => {
         });
         res.json((data) => {
           if (data.isAdmin) {
-            sessionStorage.getItem("admin", JSON.stringify(data));
+            sessionStorage.setItem("admin", JSON.stringify(data));
             navigate("/admin/addequipment");
           }
         });
