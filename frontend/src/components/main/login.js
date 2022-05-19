@@ -40,10 +40,13 @@ const Login = () => {
           title: "Success",
           text: "Loggedin Successfully",
         });
-        res.json((data) => {
+        res.json().then((data) => {
           if (data.isAdmin) {
             sessionStorage.setItem("admin", JSON.stringify(data));
             navigate("/admin/addequipment");
+          } else {
+            sessionStorage.setItem("user", JSON.stringify(data));
+            navigate("/main/listequipment");
           }
         });
       } else if (res.status === 300) {
