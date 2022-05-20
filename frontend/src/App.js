@@ -40,7 +40,6 @@ function App() {
           <Route element={<DashBoard />} path="dashboard" />
           <Route element={<Signup1 />} path="signup1" />
         </Route>
-
         <Route element={<Main />} path="main">
           <Route element={<Footer />} path="footer" />
           <Route element={<Header />} path="header" />

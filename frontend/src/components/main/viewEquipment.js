@@ -16,7 +16,6 @@ const ViewEquipment = () => {
 
   const [equipmentData, setEquipmentData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const url = app_config.api_url;
   const navigate = useNavigate();
 

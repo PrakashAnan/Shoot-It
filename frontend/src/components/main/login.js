@@ -46,7 +46,7 @@ const Login = () => {
             navigate("/admin/addequipment");
           } else {
             sessionStorage.setItem("user", JSON.stringify(data));
-            navigate("/main/listequipment");
+            navigate("/main/listproduct");
           }
         });
       } else if (res.status === 300) {

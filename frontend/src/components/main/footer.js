@@ -166,3 +166,38 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+{/* <Grid item md={4}>
+          <div className="card">
+            <img
+              className="card-img-top"
+              height="200"
+              src={url + "/uploads/"+equipment.thumbnail}
+              alt={equipment.name}
+            />
+            <div className="card-body">
+              <p className="p-title">{equipment.title}</p>
+              <p className="text-muted">{equipment.type}</p>
+              <p className="text-muted">{equipment.price}</p>
+              <p className="text-muted">{equipment.brand}</p>
+              <p className="text-muted">{equipment.image}</p>
+              <span className="p-rating">
+                {equipment.rating} <i class="fas fa-star"></i>
+              </span>
+              &nbsp;&nbsp;
+              <span className="text-muted">{equipment.reviews}</span>
+              <p className="h4 mt-4">₹ {equipment.price}</p>
+              <br />
+              <button
+                className="btn btn-outline-primary"
+                onClick={(e) =>
+                  navigate("/main/viewequipment/" + equipment._id)
+                }
+              >
+                View more
+              </button>
+            </div>
+          </div>
+        </Grid> */}

@@ -43,12 +43,12 @@ const ListEquipments = () => {
           height={250}
           width={200}
         />
-        <Skeleton animation="wave" variant="text" className="mt-3" width={50} />
+        <Skeleton animation="wave" variant="text" classNameName="mt-3" width={50} />
 
         <Skeleton
           animation="wave"
           variant="text"
-          className="mt-3"
+          classNameName="mt-3"
           width={200}
         />
       </Grid>
@@ -58,39 +58,39 @@ const ListEquipments = () => {
   const displayEquipments = () => {
     if (!loading) {
       return equipmentArray.map((equipment) => (
-        <Grid item md={4}>
+        <div className="col-lg-4 col-md-12 mb-4">
           <div className="card">
-            <img
-              className="card-img-top"
-              height="200"
-              src={url + "/uploads/" + equipment.thumbnail}
-              alt={equipment.name}
-            />
+            <div className="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+              data-mdb-ripple-color="light">
+              <img src={url + "/uploads/" + equipment.thumbnail}
+                className="w-100" />
+              <a href="#!">
+                <div className="mask">
+                  <div className="d-flex justify-content-start align-items-end h-100">
+                    <h5><span className="badge bg-primary ms-2">New</span></h5>
+                  </div>
+                </div>
+                <div className="hover-overlay">
+                  <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
+                </div>
+              </a>
+            </div>
             <div className="card-body">
-              <p className="p-title">{equipment.title}</p>
-              <p className="text-muted">{equipment.type}</p>
-              <p className="text-muted">{equipment.price}</p>
-              <p className="text-muted">{equipment.brand}</p>
-              <p className="text-muted">{equipment.image}</p>
-              <span className="p-rating">
-                {equipment.rating} <i class="fas fa-star"></i>
-              </span>
-              &nbsp;&nbsp;
-              <span className="text-muted">{equipment.reviews}</span>
-              {/* <p className="h4 mt-4">₹ {equipment.price}</p> */}
-              <br />
-              <button
-                className="btn btn-outline-primary"
-                onClick={(e) =>
-                  navigate("/main/viewequipment/" + equipment._id)
-                }
-              >
-                View more
-              </button>
+              <a href="" className="text-reset">
+                <h5 className="card-title mb-3">Product name</h5>
+              </a>
+              <a href="" className="text-reset">
+                <p>Category</p>
+              </a>
+              <h6 className="mb-3">$61.99</h6>
             </div>
           </div>
-        </Grid>
-      ));
+        </div>
+
+
+
+      )
+      );
     } else {
       return (
         <Grid container spacing={6}>
@@ -99,15 +99,13 @@ const ListEquipments = () => {
       );
     }
   };
-
   return (
     <div className="container">
       <h1>List Equipments</h1>
-      <Grid container spacing={6}>
+      <div className="row" container spacing={6}>
         {displayEquipments()}
-      </Grid>
+      </div>
     </div>
   );
 };
-
 export default ListEquipments;

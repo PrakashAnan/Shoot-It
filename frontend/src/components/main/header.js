@@ -49,7 +49,7 @@ const guestUser = [
   {
     name: "AddToCart",
     link: "/main/checkout",
-    icon:<ShoppingCart/>,
+    icon: <ShoppingCart />,
   },
 ];
 
@@ -58,13 +58,9 @@ const Header = () => {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [anchorElGuest, setAnchorElGuest] = useState(null);
 
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")));
+  const [currentAdmin, setCurrentAdmin] = useState(JSON.parse(sessionStorage.getItem('admin')));
 
-  const user = sessionStorage.getItem("user");
-
-  useEffect(() => {
-    setCurrentUser(JSON.parse(sessionStorage.getItem("user")));
-  }, [user]);
 
   const navigate = useNavigate();
 
@@ -74,8 +70,18 @@ const Header = () => {
     navigate("/main/login");
   };
 
+  const showAdmin = () => {
+    if (currentAdmin !== null)
+      return <Button
+        onClick={(e) => navigate("/admin/addequipment")}
+        sx={{ my: 2, color: "white", display: "block" }}
+      >
+        Add Equipment
+      </Button>
+  }
+
   const userMenu = [
-    
+
     {
       name: "Profile",
       icon: <AccountCircle />,
@@ -163,7 +169,7 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            
+
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ name, link }) => (
@@ -175,6 +181,7 @@ const Header = () => {
                 {name}
               </Button>
             ))}
+            {showAdmin()}
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             {guestUser.map(({ name, link, icon }) => (
