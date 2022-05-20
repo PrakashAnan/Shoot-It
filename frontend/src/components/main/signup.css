@@ -1,12 +1,13 @@
  .back{
-    background-image: url("https://www.smith.edu/sites/default/files/media/Documents/College-Relations/fall-zoom-5.jpg");
-    
+    background-image: url("https://images7.alphacoders.com/313/thumb-1920-313727.jpg");
     background-size: no-repeat;
     background-size: cover;
+    /* opacity: 0.8; */
 }
 
 .card{
-    background-image: url("");
+    background-image: linear-gradient(to left,rgba(12, 66, 166, 0.409),rgb(16, 120, 158)); 
+    
 } 
 
  .signup_div{

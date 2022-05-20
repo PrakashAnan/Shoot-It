@@ -25,7 +25,7 @@ import { useEffect, useState } from "react";
 
 const pages = [
   {
-    name: "Browse Product",
+    name: "Explore Product",
     link: "/main/listproduct",
   },
 ];
@@ -77,14 +77,14 @@ const Header = () => {
   const userMenu = [
     
     {
-      name: "Profile",
+      name: "signup",
       icon: <AccountCircle />,
-      link: "/profile",
+      link: "/main/usersignup",
     },
     {
-      name: "Manage Vlogs",
+      name: "Login",
       icon: <Subscriptions />,
-      link: "/managevlog",
+      link: "/main/login",
     },
     {
       name: "Logout",
@@ -118,7 +118,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            SHOOT'IT'
+            Shoot'IT'
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
