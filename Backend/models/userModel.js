@@ -7,7 +7,7 @@ const mySchema = new mongoose.Schema({
     mobileno: Number,
     password: String,
     email:String,
-    isAdmin: {type : Boolean, default : false},
+    isAdmin: {type : Boolean, default : true},
     createdAt: { type: Date, default: new Date() },
 
 })
