@@ -1,7 +1,9 @@
+import { TextField } from "@mui/material";
 import React from "react";
+import "./footer.css";
 const Footer = () => {
   return (
-    <footer className="bg-dark text-center text-white">
+    <footer className="bck text-center text-white">
       <div className="container p-4">
         <section className="mb-4">
           <a className="btn btn-outline-light btn-floating m-1" href="#!" role="button"
@@ -43,8 +45,15 @@ const Footer = () => {
               <div className="col-md-5 col-12">
 
                 <div className="form-outline form-white mb-4">
-                  <input type="email" id="form5Example21" className="form-control" />
-                  <label className="form-label" for="form5Example21">Email address</label>
+                 <TextField
+                 variant="outlined"
+                 label="Enter your email"
+                 placeholder="email"
+                 className="w-100 "
+
+
+
+                 />
                 </div>
               </div>
 
@@ -61,9 +70,9 @@ const Footer = () => {
 
         <section className="mb-4">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-            repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-            eum harum corrupti dicta, aliquam sequi voluptate quas.
+          “We see our customers as invited guests to a party, and we are the hosts.
+           It’s our job every day to make every important aspect of the customer
+            experience a little bit better.” – Jeff Bezos, Founder of Amazon.
           </p>
         </section>
 
@@ -156,7 +165,7 @@ const Footer = () => {
 
 
       <div className="text-center p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
-        © 2020 Copyright:
+        @ ShootIT Website
         <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
 

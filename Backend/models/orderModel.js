@@ -12,6 +12,6 @@ const mySchema = new mongoose.Schema({
     createdAt: { type: Date, default: new Date() },
 });
 
-const myModel = mongoose.model("OrderPlaced", mySchema);
+const myModel = mongoose.model("OrderList", mySchema);
 
 module.exports = myModel;
