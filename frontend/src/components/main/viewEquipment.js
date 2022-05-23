@@ -42,6 +42,19 @@ const ViewEquipment = () => {
     if (!loading) {
       return (
         <div className="container-fluid">
+          <Grid container>
+            <Grid item md={6}>
+              <img className="demoimg" src="https://tse4.mm.bing.net/th?id=OIP.0ci0fY7W9l0_chsZVVUgLAHaFj&pid=Api&P=0&w=238&h=179" alt="#"/>
+            </Grid>
+            <Grid item md={6}>
+              <p>This is the another grid where i have divided the grid into two parts so that i can</p>
+            </Grid>
+          </Grid>
+
+
+
+
+
           <Grid container justifyContent="center" spacing={0}>
             <Grid item md={4}>
               <Paper className="backside">
