@@ -5,7 +5,6 @@ import "./home.css"
 const Home = () => {
   return (
     <div>
-<<<<<<< HEAD
    <h1>home component</h1>
    
 
