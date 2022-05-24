@@ -73,7 +73,7 @@ const ListEquipments = () => {
             
                 <div className="mask">
                   <div className="d-flex justify-content-start align-items-end h-100">
-                    <h5><span className="badge bg-primary ms-2">New</span></h5>
+                    {/* <h5><span className="badge bg-primary ms-2">New</span></h5> */}
                   </div>
                 </div>
                 <div className="hover-overlay">
