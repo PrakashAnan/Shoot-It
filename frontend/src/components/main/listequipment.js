@@ -82,9 +82,7 @@ const ListEquipments = () => {
               
             </div>
             <div className="card-body">
-              {/* <a href="" className="text-reset">
-                <h5 className="font card-title mb-1">{equipment.type}</h5>
-              </a> */}
+             
                 <h4>
                   <span>{equipment.brand} {equipment.model}</span>
                   <span className="float-end">₹ {equipment.price}</span>
@@ -112,7 +110,7 @@ const ListEquipments = () => {
   return (
     <div className="list1 container mt-2">
       
-      <div className="row" container spacing={6}>
+      <div className="row" container spacing={4}>
         {displayEquipments()}
       </div>
     </div>
