@@ -63,7 +63,7 @@ const Login = () => {
     <div>
       <Paper className="loginback">
         <Grid container justifyContent="center">
-          <Grid item md={4} sm={2}>
+          <Grid item md={4} sm={6}>
             <Card className="mt-4 mb-4">
               <CardContent className="inline-background">
                 <p className="h3 text-center mb-3 mt-3">Login Here</p>
@@ -133,9 +133,9 @@ const Login = () => {
           </Grid>
           <Grid item md={4} sm={2}>
             <Card className="mt-4">
-              <div className="third">
+              <div className="col-md-12 col-sm-6">
                 <img
-                  className="img-fluid sideimg"
+                  className="img-fluid sideimg "
                   src="https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt=""
                 ></img>

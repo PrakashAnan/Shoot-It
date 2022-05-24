@@ -48,7 +48,7 @@ const UserSignup = () => {
         <Paper className='back'>
 
         <Grid container justifyContent="center">
-          <Grid item md={4} sm={2}>
+          <Grid item md={4} sm={6}>
             <Card className='mt-5 mb-5 card'>
               {/* for making card color */}
               <CardContent>

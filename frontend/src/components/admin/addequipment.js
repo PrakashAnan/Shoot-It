@@ -17,7 +17,8 @@ import "./addequipment.css";
 const AddEquipment = () => {
   const equipmentdetail = {
     type: "",
-    title: "",
+    review:"",
+    rating:"",
     model: "",
     price: "",
     image: "",
@@ -84,6 +85,7 @@ const AddEquipment = () => {
                 >
                   {({ values, handleChange, handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
+
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
@@ -94,7 +96,26 @@ const AddEquipment = () => {
                         value={values.type}
                         onChange={handleChange}
                       />
-
+                      <TextField
+                        className="w-100 mt-2"
+                        autoComplete="off"
+                        placeholder="Review"
+                        variant="filled"
+                        label="Review"
+                        id="review"
+                        value={values.review}
+                        onChange={handleChange}
+                      />
+                      <TextField
+                        className="w-100 mt-2"
+                        autoComplete="off"
+                        placeholder="Rating"
+                        variant="filled"
+                        label="Rating"
+                        id="rating"
+                        value={values.rating}
+                        onChange={handleChange}
+                      />
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"

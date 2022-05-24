@@ -38,7 +38,7 @@ const Footer = () => {
 
               <div className="col-auto">
                 <p className="pt-2">
-                  <strong>Sign up for our newsletter</strong>
+                  <strong>Sign up for our ShootIT</strong>
                 </p>
               </div>
 
