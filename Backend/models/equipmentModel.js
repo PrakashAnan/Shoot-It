@@ -1,7 +1,8 @@
 const mongoose = require("../connection");
 const mySchema = new mongoose.Schema({
   type:String,
-  title: String, 
+  review:String,
+  rating:Number,
   model: String,
   price: Number,
   image: String,

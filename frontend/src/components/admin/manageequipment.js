@@ -65,7 +65,7 @@ const ManageEquipment = () => {
         <div className="container mt-2">
           <Accordion>
             <AccordionSummary>
-              <h1>{equipment.title}</h1>
+              <h1>{equipment.type}</h1>
 
             </AccordionSummary>
             <AccordionDetails>

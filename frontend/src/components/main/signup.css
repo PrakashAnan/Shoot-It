@@ -1,12 +1,12 @@
  .back{
-    background-image: url("https://images7.alphacoders.com/313/thumb-1920-313727.jpg");
+    background-image: url("https://www.mwallpapers.com/download-image/722829/1080x789");
     background-size: no-repeat;
     background-size: cover;
     /* opacity: 0.8; */
 }
 
 .card{
-    background-image: linear-gradient(to left,rgba(12, 66, 166, 0.409),rgb(16, 120, 158)); 
+    background-image: linear-gradient(to left,rgba(236, 238, 243, 0.409),rgba(211, 248, 247, 0.957)); 
     
 } 
 
