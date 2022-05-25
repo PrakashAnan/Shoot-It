@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import app_config from "../config";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import UpdateEquipment from "./updateEquipment";
 
 
 
@@ -11,6 +12,9 @@ const ManageEquipment = () => {
   const [productArray, setProductArray] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  const [updateFormData, setUpdateFormData] = useState(null);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
 
   // URL link
   const url = app_config.api_url;
@@ -49,7 +53,10 @@ const ManageEquipment = () => {
       })
   }
 
-
+  const updateEquipment = (formdata) => {
+    setUpdateFormData(formdata);
+    setShowUpdateForm(true);
+  }
 
 
 
@@ -110,6 +117,7 @@ const ManageEquipment = () => {
                         <Button
                           variant="outlined"
                           color="success"
+                          onClick={e => updateEquipment(equipment)}
                           className="w-100">update
                         </Button>
 
@@ -136,7 +144,14 @@ const ManageEquipment = () => {
 
 
   };
-  return <div>{displayProducts()}</div>
+  return <div>
+    {displayProducts()}
+    {
+      showUpdateForm ? 
+      <UpdateEquipment equipmentdetail={updateFormData} fetchEquipments={fetchData} setShowForm={setShowUpdateForm} />
+      : ''
+    }
+    </div>
 
 
 };
