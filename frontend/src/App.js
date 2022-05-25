@@ -39,7 +39,6 @@ function App() {
           <Route element={<ManageEquipment />} path="manageequipment" />
           <Route element={<ManageUser />} path="manageuser" />
           <Route element={<DashBoard />} path="dashboard" />
-        
         </Route>
         <Route element={<Main />} path="main">
           <Route element={<Footer />} path="footer" />
