@@ -44,6 +44,7 @@ const Login = () => {
           if (data.isAdmin) {
             sessionStorage.setItem("admin", JSON.stringify(data));
             navigate("/admin/addequipment");
+            
           } else {
             sessionStorage.setItem("user", JSON.stringify(data));
             navigate("/main/listproduct");
@@ -65,6 +66,7 @@ const Login = () => {
         <Grid container justifyContent="center">
           <Grid item md={4} sm={6}>
             <Card className="mt-4 mb-4">
+
               <CardContent className="inline-background">
                 <p className="h3 text-center mb-3 mt-3">Login Here</p>
                 <Formik initialValues={loginForm} onSubmit={loginSubmit}>
@@ -132,14 +134,16 @@ const Login = () => {
             </Card>
           </Grid>
           <Grid item md={4} sm={2}>
-            <Card className="mt-4">
+                <div style={{background: 'url(https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+              backgroundPosition: 'center', backgroundSize:'cover', height: '100%'}}></div>
               <div className="col-md-12 col-sm-6">
-                <img
-                  className="img-fluid sideimg "
-                  src="https://images.pexels.com/photos/1178337/pexels-photo-1178337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                {/* <img
+                  className="img-fluid sideimg"
+                  src=""
                   alt=""
-                ></img>
+                ></img> */}
               </div>
+                <Card className="mt-4">
             </Card>
           </Grid>
         </Grid>
