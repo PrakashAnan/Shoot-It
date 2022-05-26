@@ -11,7 +11,7 @@ const Home = () => {
 
       <div data-draggable="true" className="container-fluid pt-2" style={{ position: 'relative', draggable: 'false' }}>
         <section draggable="false" className="overflow-hidden pt-0" data-v-271253ee="">
-          <section className="mb-10">
+          <section className="mb-2">
             <div className="text-center bg-image"
               style={{
                 backgroundImage: 'url(https://media.architecturaldigest.com/photos/5b7dc0c5f3a08c0bc142f98f/master/pass/GettyImages-617579982.jpg)', height: ' 500px', backgroundSize: 'cover', backgroundPosition: '50% 50%', backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -22,7 +22,7 @@ const Home = () => {
                   <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-lg-10">
                       <div className="text-white pb-md-5">
-                        <h1 className="my-md-5 mb-4 px-4 px-md-5 display-3 fw-bold ls-tight"> <span>The best offer on the
+                        <h1 className="my-md-5 px-4 px-md-5 display-3 fw-bold ls-tight"> <span>The best offer on the
                           market</span> <br /> <span className="">for your business</span> </h1> <a
                             className="btn   btn-secondary btn-lg py-3 px-5 me-2" href="#!" role="button"
                             aria-controls="#picker-editor" draggable="false" >Get started</a>
@@ -40,48 +40,47 @@ const Home = () => {
         <div>
           <div data-draggable="true" class="" style={{ position: 'relative' }} draggable="false">
             <section draggable="false" class="container" data-v-271253ee="">
-              <section class="mb-10">
-                <h2 class="fw-bold mb-5 text-center">Latest articles</h2>
+              <section class="mb-5">
+                <h2 class="fw-bold mb-5 text-center">Some Interesting Fact About Our Website</h2>
                 <div class="row gx-lg-5 mb-5 align-items-center">
                   <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
+                    <img src="https://specials-images.forbesimg.com/imageserve/6193f0f2646f783bb47cfe05/Best-Cameras-for-Photography--Photographer-with-camera/960x0.jpg?cropX1=219&cropX2=2216&cropY1=0&cropY2=1497"
                       class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                   </div>
                   <div class="col-md-6 mb-4 mb-md-0">
-                    <h3 class="fw-bold">Art</h3>
+                    <h3 class="fw-bold">Cameras</h3>
                     <div class="mb-2 text-danger small"> <i class="fas fa-money-bill me-2"
                       aria-controls="#picker-editor"></i><span>Business</span> </div>
-                    <p class="text-muted">Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat vulputate. Ut
-                      vulputate est non quam dignissim elementum. Donec a ullamcorper diam.</p>
-                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quae nulla saepe rerum
-                      aspernatur odio amet perferendis tempora mollitia? Ratione unde magni omnis quaerat blanditiis cumque
-                      dolore placeat rem dignissimos?</p> <a class="btn  btn-secondary" href="#" role="button"
+                    <p class="text-muted">
+                    A camera is an optical instrument that captures a visual image.
+                     At a basic level, cameras consist of sealed boxes, with a
+                      small hole (the aperture) that allows light through to 
+                      capture an image on a light-sensitive surface.
+                    </p>
+                    <p class="text-muted">The still image camera is the main instrument in the art of photography. Captured images may be reproduced later as part of the process of photography, digital imaging, or photographic printing</p> <a class="btn  btn-secondary" href="#" role="button"
                         aria-controls="#picker-editor" draggable="false">Read more</a>
                   </div>
                 </div>
                 <div class="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
                   <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="https://mdbootstrap.com/img/new/standard/city/033.jpg"
+                    <img src="https://i.pinimg.com/originals/19/8f/f8/198ff8af37a8431c970e60c2e75dff53.jpg"
                       class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                   </div>
                   <div class="col-md-6 mb-4 mb-md-0">
-                    <h3 class="fw-bold">Exhibition in Paris</h3>
+                    <h3 class="fw-bold">Setup Equipment For Photoshoot</h3>
                     <div class="mb-2 text-primary small"> <i class="fas fa-money-bill me-2"
                       aria-controls="#picker-editor"></i><span>Art</span> </div>
-                    <p class="text-muted">Duis sagittis, turpis in ullamcorper venenatis, ligula nibh porta dui, sit amet
-                      rutrum enim massa in ante. Curabitur in justo at lorem laoreet ultricies. Nunc ligula felis, sagittis
-                      eget nisi vitae, sodales vestibulum purus. Vestibulum nibh ipsum, rhoncus vel sagittis nec, placerat
-                      vel justo. Duis faucibus sapien eget tortor finibus, a eleifend lectus dictum. Cras tempor convallis
-                      magna id rhoncus. Suspendisse potenti. Nam mattis faucibus imperdiet. Proin tempor lorem at neque
-                      tempus aliquet. Phasellus at ex volutpat, varius arcu id, aliquam lectus. Vestibulum mattis felis quis
-                      ex pharetra luctus. Etiam luctus sagittis massa, sed iaculis est vehicula ut.</p> <a
+                    <p class="text-muted">Every photographer, beginner or professional, knows that photography is an expensive profession.
+                     Buying a budget DSLR camera will cost you around $500,
+                      and additional equipment can go from 10 bucks to a couple of thousands.
+                    Many will tell you that you don’t need all the fancy equipment to be a great photographer, and to some extent that statement is true, but the additional equipment and accessories will, for sure, make your job easier, and your photos look effortless. Because of that, it’s always smart to invest in equipment, so I’ve picked 13 must-have accessories for you.</p> <a
                         class="btn  btn-secondary" href="#" role="button" aria-controls="#picker-editor" draggable="false"
                       >Read more</a>
                   </div>
                 </div>
                 <div class="row gx-lg-5 mb-5 align-items-center">
                   <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="https://mdbootstrap.com/img/new/standard/city/079.jpg"
+                    <img src="https://cdn.vitecimagingsolutions.com/fileadmin/Manfrotto/Global/Contents/Shopping-Assistant/photography-studio-setup-how-do-it-professionally/manfrotto_air50_studio_setup.jpg"
                       class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                   </div>
                   <div class="col-md-6 mb-4 mb-md-0">
@@ -111,10 +110,6 @@ const Home = () => {
       <script type="text/javascript"></script>
 
 
-
-
-
-
       <div data-draggable="true" className="" style={{ position: 'relative' }}>
         <section draggable="false" className="container-fluid " data-v-271253ee="">
           <section className="mb-10 text-center">
@@ -123,12 +118,14 @@ const Home = () => {
               <div className="col-lg-4 col-md-12 mb-6 mb-lg-0">
                 <div className="card shadow-2-strong">
                   <div className="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light"
-                    style={{ marginTop: '-15px' }}> <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/002.webp"
+                    style={{ marginTop: '-15px' }}> <img src="https://cdn.britannica.com/67/92867-050-BC3DC984/cameras-camera-reviews-crystal-displays-photographs-film.jpg"
                       className="img-fluid" alt="" aria-controls="#picker-editor" /> </div>
                   <div className="card-body">
-                    <h5 className="card-title">White city</h5>
-                    <p className="card-text">Ut pretium ultricies dignissim. Sed sit amet mi eget urna placerat vulputate.
-                      Ut vulputate est non quam dignissim elementum. Donec a ullamcorper diam.</p> <a href="#!"
+                    <h5 className="card-title">Sony Camera</h5>
+                    <p className="card-text">Sony’s full-frame cameras are a little more difficult to decipher
+                     than other manufacturers if you’re unfamiliar with the system.
+                      All of Sony’s A7 series cameras – the Sony A7 IV, A7C, A7 III, A7R IV and A7S III
+                      – boast full-frame sensors.</p> <a href="#!"
                         className="btn  btn-primary btn-rounded" aria-controls="#picker-editor">Read more</a>
                   </div>
                 </div>
@@ -136,7 +133,7 @@ const Home = () => {
               <div className="col-lg-4 mb-6 mb-lg-0">
                 <div className="card shadow-2-strong">
                   <div className="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light"
-                    style={{ marginTop: '-15px' }}> <img src="https://mdbcdn.b-cdn.net/img/new/standard/people/066.webp"
+                    style={{ marginTop: '-15px' }}> <img src="https://cdn.vitecimagingsolutions.com/fileadmin/Manfrotto/Global/Contents/Shopping-Assistant/photography-studio-equipment-for-beginners/190_studio_equipment_beginners.jpg"
                       className="img-fluid" alt="" aria-controls="#picker-editor" /> </div>
                   <div className="card-body">
                     <h5 className="card-title">A lonely bench</h5>
@@ -149,7 +146,7 @@ const Home = () => {
               <div className="col-lg-4 mb-6 mb-lg-0">
                 <div className="card shadow-2-strong">
                   <div className="bg-image hover-overlay ripple shadow-4-strong rounded mx-3" data-mdb-ripple-color="light"
-                    style={{ marginTop: '-15px' }}> <img src="https://mdbcdn.b-cdn.net/img/new/standard/people/191.webp"
+                    style={{ marginTop: '-15px' }}> <img src="https://cdn.vox-cdn.com/thumbor/K01BgUXARNRME1LETdi8XgOXDw4=/0x0:2040x1360/1200x0/filters:focal(0x0:2040x1360):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/13455780/brose_181119_3088_0032.jpg"
                       className="img-fluid" alt="" aria-controls="#picker-editor" /> </div>
                   <div className="card-body">
                     <h5 className="card-title">Happy snow</h5>
@@ -170,7 +167,7 @@ const Home = () => {
         <section draggable="false" className="container pt-5" data-v-271253ee="">
           <section className="mb-10 text-center">
 
-            <div className="p-5 bg-image"
+            <div className="container p-5 bg-image"
               style={{
                 backgroundImage: 'url(https://mdbootstrap.com/img/new/textures/full/171.jpg)', height: '300px', backgroundSize: 'cover', backgroundPosition: '50% 50%', backgroundColor: 'rgba(0, 0, 0, 0)',
                 ariaControls: '#picker-editor'
@@ -181,22 +178,22 @@ const Home = () => {
                 <div className="row mb-5">
                   <div className="col-lg-3 col-md-6 mb-5 mb-lg-0 position-relative"> <i
                     className="fas fa-globe-americas fa-3x text-primary mb-4" aria-controls="#picker-editor"></i>
-                    <h6 className="fw-normal mb-0">Unites States</h6>
+                    <h6 className="fw-normal mb-0">India</h6>
                     <hr className="divider-vertical d-none d-lg-block" />
                   </div>
                   <div className="col-lg-3 col-md-6 mb-5 mb-lg-0 position-relative"> <i
                     className="fas fa-map-marker-alt fa-3x text-primary mb-4" aria-controls="#picker-editor"></i>
-                    <h6 className="fw-normal mb-0">New York, 94126</h6>
+                    <h6 className="fw-normal mb-0">India, 0612</h6>
                     <hr className="divider-vertical d-none d-lg-block" />
                   </div>
                   <div className="col-lg-3 col-md-6 mb-4 mb-lg-0 position-relative"> <i
                     className="fas fa-phone fa-3x text-primary mb-4" aria-controls="#picker-editor"></i>
-                    <h6 className="fw-normal mb-0">+ 01 234 567 89</h6>
+                    <h6 className="fw-normal mb-0">+91 74 88 25 09 97</h6>
                     <hr className="divider-vertical d-none d-lg-block" />
                   </div>
                   <div className="col-lg-3 col-md-6 mb-4 mb-lg-0 position-relative"> <i
                     className="fas fa-hand-holding-usd fa-3x text-primary mb-4" aria-controls="#picker-editor"></i>
-                    <h6 className="fw-normal mb-0">Tax ID: 273 384</h6>
+                    <h6 className="fw-normal mb-0">Tax ID: 111 222</h6>
                   </div>
                 </div>
                 <div className="row d-flex justify-content-center">

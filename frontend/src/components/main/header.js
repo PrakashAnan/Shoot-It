@@ -273,15 +273,6 @@ const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      {/* <div className="input-group search_bar">
-        <div className="form-outline">
-          <input type="search"id="form1"class="form-control"/>
-          <label className="form-label" for="form1"> Search </label>
-        </div>
-        <button type="button" class="btn btn-primary">
-          <i className="fas fa-search" />
-        </button>
-      </div> */}
     </div>
   );
 };
