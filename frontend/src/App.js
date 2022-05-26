@@ -34,6 +34,7 @@ function App() {
           }
           path="admin"
         >
+          <Route element={<Footer />} path="footer" />
           <Route element={<AddEquipment />} path="addequipment" />
           <Route element={<AdminProfile />} path="profile" />
           <Route element={<ManageEquipment />} path="manageequipment" />

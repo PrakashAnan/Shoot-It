@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import app_config from "../config";
 import "./addequipment.css";
@@ -73,18 +72,16 @@ const AddEquipment = () => {
   };
 
   return (
-    <div>
-      <Paper>
-        <Grid container spacing={2} justifyContent="start">
-          <Grid item md={6} sm={2}>
-            <Card>
-              <CardContent>
-                <Formik
-                  initialValues={equipmentdetail}
-                  onSubmit={submitEquipment}
-                >
-                  {({ values, handleChange, handleSubmit }) => (
-                    <form onSubmit={handleSubmit}>
+    <div className="container">
+      <Formik initialValues={equipmentdetail} onSubmit={submitEquipment}>
+
+{({ values, handleChange, handleSubmit }) => (
+  <form onSubmit={handleSubmit}>
+      <Card>
+      <CardContent>
+      <Grid container spacing={10}>
+              <Grid item md={6}>
+                   
 
                       <TextField
                         className="w-100 mt-2"
@@ -96,6 +93,9 @@ const AddEquipment = () => {
                         value={values.type}
                         onChange={handleChange}
                       />
+                      </Grid>
+                      <Grid item md={6}>  
+
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
@@ -106,7 +106,13 @@ const AddEquipment = () => {
                         value={values.review}
                         onChange={handleChange}
                       />
-                      <TextField
+                      </Grid>
+                      </Grid>
+
+
+                      <Grid container spacing={10}>
+                     <Grid item md={6}>
+                     <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         placeholder="Rating"
@@ -116,16 +122,23 @@ const AddEquipment = () => {
                         value={values.rating}
                         onChange={handleChange}
                       />
+                      </Grid>
+                      <Grid item md={6}>
                       <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        placeholder="Title"
-                        variant="filled"
-                        label="Title"
-                        id="title"
-                        value={values.title}
-                        onChange={handleChange}
-                      />
+                      className="w-100 mt-2"
+                      autoComplete="off"
+                      placeholder="Title"
+                      variant="filled"
+                      label="Title"
+                      id="title"
+                      value={values.title}
+                      onChange={handleChange}
+                    />
+                    </Grid>
+                    </Grid>
+                     
+                      <Grid container spacing={10}>
+                      <Grid item md={6}>
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
@@ -136,6 +149,8 @@ const AddEquipment = () => {
                         value={values.model}
                         onChange={handleChange}
                       />
+                      </Grid>
+                      <Grid item md={6}>
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
@@ -146,8 +161,13 @@ const AddEquipment = () => {
                         value={values.price}
                         onChange={handleChange}
                       />
+                      </Grid>
+                    </Grid>
                       
-
+                      
+                      
+                     <Grid container spacing={10}>
+                     <Grid item md={6}>
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
@@ -158,6 +178,11 @@ const AddEquipment = () => {
                         value={values.brand}
                         onChange={handleChange}
                       />
+
+                      </Grid>
+
+
+                      <Grid item md={6}>
                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
@@ -168,7 +193,14 @@ const AddEquipment = () => {
                         value={values.comboOffer}
                         onChange={handleChange}
                       />
-                      <TextField
+
+                       </Grid>
+                       </Grid>
+
+
+                      <Grid container spacing={10}>
+                      <Grid item md={6}>
+                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -178,7 +210,11 @@ const AddEquipment = () => {
                         value={values.specification}
                         onChange={handleChange}
                       />
-                      <TextField
+
+                       </Grid>
+
+                       <Grid item md={6}>
+                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -188,7 +224,14 @@ const AddEquipment = () => {
                         value={values.availableOffer}
                         onChange={handleChange}
                       />
-                      <TextField
+                      </Grid>
+
+                      </Grid>
+                
+                
+                      <Grid container spacing={10}>
+                       <Grid item md={6}>
+                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -198,7 +241,11 @@ const AddEquipment = () => {
                         value={values.delivery}
                         onChange={handleChange}
                       />
-                      <TextField
+                     </Grid>
+
+
+                    <Grid item md={6}>
+                       <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -208,7 +255,13 @@ const AddEquipment = () => {
                         value={values.sensorfeature}
                         onChange={handleChange}
                       />
-                      <TextField
+
+                     </Grid>
+                    </Grid>
+
+                <Grid container spacing={10}>
+                  <Grid item md={6}>
+                  <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -218,7 +271,10 @@ const AddEquipment = () => {
                         value={values.lensfeature}
                         onChange={handleChange}
                       />
-                      <TextField
+                  </Grid>
+
+                  <Grid item md={6}>
+                  <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -228,24 +284,14 @@ const AddEquipment = () => {
                         value={values.warranty}
                         onChange={handleChange}
                       />
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="Highlights"
-                        label="highlights"
-                        id="highlights"
-                        value={values.highlights}
-                        onChange={handleChange}
-                      />
-                      <Checkbox
-                        label="Rentable"
-                        id="rentable"
-                        checked={values.rentable}
-                        onChange={handleChange}
-                      />
+                      </Grid>
+                     </Grid>
 
-                      <TextField
+
+                        <Grid container spacing={10}>
+
+                          <Grid item md={6}>
+                          <TextField
                         className="w-100 mt-2"
                         autoComplete="off"
                         variant="filled"
@@ -255,6 +301,37 @@ const AddEquipment = () => {
                         value={values.rentPrice}
                         onChange={handleChange}
                       />
+
+                          </Grid>
+
+
+
+                        <Grid item md={6}>
+                        <TextField
+                        className="w-100 mt-2"
+                        autoComplete="off"
+                        variant="filled"
+                        placeholder="Highlights"
+                        label="highlights"
+                        id="highlights"
+                        value={values.highlights}
+                        onChange={handleChange}
+                      />
+
+                     </Grid>
+                     </Grid>
+      
+                      <Checkbox
+                        label="Rentable"
+                        id="rentable"
+                        checked={values.rentable}
+                        onChange={handleChange}
+                      />
+                        <Grid container spacing={10}>
+                        <Grid item md={6}>
+                      
+                      </Grid>
+                      </Grid>
 
                       <label>Upload thumbnail</label>
                       <input
@@ -271,22 +348,17 @@ const AddEquipment = () => {
                       >
                         AddEquipment
                       </Button>
-                    </form>
-                  )}
+                  
+                
+                </CardContent>
+                </Card>
+                </form>
+                 )} 
                 </Formik>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item md={4} sm={2}>
-            <div className="img">
-              <img
-                src="https://images.unsplash.com/photo-1618397806877-f0187730803f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtZXJhc3xlbnwwfHwwfHw%3D&w=1000&q=80"
-                alt=""
-              />
-            </div>
-          </Grid>
-        </Grid>
-      </Paper>
+          
+                      
+            
+    
     </div>
   );
 };
