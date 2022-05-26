@@ -49,7 +49,7 @@ const UserSignup = () => {
 
         <Grid container justifyContent="center">
           <Grid item md={4} sm={6}>
-            <Card className='mt-5 mb-5 card'>
+            <Card className='car mt-5 mb-5'>
               {/* for making card color */}
               <CardContent>
                 <h1>Signup Here</h1>
