@@ -35,21 +35,17 @@ const Home = () => {
           </section>
         </section>
       </div>
-
-
       <div id="preview" class="preview">
-        <div style={{display: 'none'}}></div>
+        <div style={{ display: 'none' }}></div>
         <div>
-          <div data-draggable="true" class="" style={{position: 'relative'}} draggable="false">
-
-
+          <div data-draggable="true" class="" style={{ position: 'relative' }} draggable="false">
             <section draggable="false" class="container" data-v-271253ee="">
               <section class="mb-10">
                 <h2 class="fw-bold mb-5 text-center">Latest articles</h2>
                 <div class="row gx-lg-5 mb-5 align-items-center">
                   <div class="col-md-6 mb-4 mb-md-0">
-                     <img src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
-                    class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false"/>
+                    <img src="https://mdbootstrap.com/img/new/standard/city/028.jpg"
+                      class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                   </div>
                   <div class="col-md-6 mb-4 mb-md-0">
                     <h3 class="fw-bold">Art</h3>
@@ -65,8 +61,8 @@ const Home = () => {
                 </div>
                 <div class="row gx-lg-5 mb-5 flex-lg-row-reverse align-items-center">
                   <div class="col-md-6 mb-4 mb-md-0">
-                     <img src="https://mdbootstrap.com/img/new/standard/city/033.jpg"
-                    class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false"/>
+                    <img src="https://mdbootstrap.com/img/new/standard/city/033.jpg"
+                      class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                   </div>
                   <div class="col-md-6 mb-4 mb-md-0">
                     <h3 class="fw-bold">Exhibition in Paris</h3>
@@ -80,13 +76,13 @@ const Home = () => {
                       tempus aliquet. Phasellus at ex volutpat, varius arcu id, aliquam lectus. Vestibulum mattis felis quis
                       ex pharetra luctus. Etiam luctus sagittis massa, sed iaculis est vehicula ut.</p> <a
                         class="btn  btn-secondary" href="#" role="button" aria-controls="#picker-editor" draggable="false"
-                        >Read more</a>
+                      >Read more</a>
                   </div>
                 </div>
                 <div class="row gx-lg-5 mb-5 align-items-center">
                   <div class="col-md-6 mb-4 mb-md-0">
-                     <img src="https://mdbootstrap.com/img/new/standard/city/079.jpg"
-                    class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false"/>
+                    <img src="https://mdbootstrap.com/img/new/standard/city/079.jpg"
+                      class="w-100 shadow-4-strong rounded-4 mb-4" alt="" aria-controls="#picker-editor" draggable="false" />
                   </div>
                   <div class="col-md-6 mb-4 mb-md-0">
                     <h3 class="fw-bold">Stock market boom</h3>
@@ -102,7 +98,7 @@ const Home = () => {
                       ultrices erat. Aliquam eros ipsum, interdum et mattis vitae, faucibus vitae justo. Nulla condimentum
                       hendrerit leo, in feugiat ipsum condimentum ac. Maecenas sed blandit dolor.</p> <a
                         class="btn  btn-secondary" href="#" role="button" aria-controls="#picker-editor" draggable="false"
-                        >Read more</a>
+                      >Read more</a>
                   </div>
                 </div>
               </section>
@@ -111,18 +107,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-
-
-
       <script type="text/javascript" src="js/mdb.min.js"></script>
-
       <script type="text/javascript"></script>
-
-
-
-
-
 
 
 
@@ -132,7 +118,7 @@ const Home = () => {
       <div data-draggable="true" className="" style={{ position: 'relative' }}>
         <section draggable="false" className="container-fluid " data-v-271253ee="">
           <section className="mb-10 text-center">
-            <h2 className="fw-bold mb-7 text-center">Projects we are proud of</h2>
+            {/* <h2 className="fw-bold mb-7 text-center">Projects we are proud of</h2> */}
             <div className="row gx-lg-5">
               <div className="col-lg-4 col-md-12 mb-6 mb-lg-0">
                 <div className="card shadow-2-strong">
@@ -216,7 +202,6 @@ const Home = () => {
                 <div className="row d-flex justify-content-center">
                   <div className="col-lg-6">
                     <form>
-
                       <div className="form-outline mb-4"> <input type="text" id="form4Example1" className="form-control" /> <label
                         className="form-label" for="form4Example1" style={{ marginLeft: '0px' }}>Name</label>
                         <div className="form-notch">
@@ -259,5 +244,4 @@ const Home = () => {
     </div >
   )
 };
-
 export default Home;

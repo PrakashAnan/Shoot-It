@@ -52,5 +52,17 @@ router.get("/getbyid/:id", (req, res) => {
     });
 });
 
+router.put("/update/:id", (req, res) => {
+  Model.findByIdAndUpdate(req.params.id, req.body)
+    .then((data) => {
+      console.log("Equipment data updated..");
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 
 module.exports = router;
