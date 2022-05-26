@@ -48,6 +48,10 @@ function App() {
           <Route element={<Login />} path="login" />
           <Route element={<ListProduct />} path="listproduct" />
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
+
+
+
+
           <Route element={
             <UserAuthenticator>
               <CheckOut />
