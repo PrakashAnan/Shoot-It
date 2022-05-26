@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Admin from "./components/admin";
 import AdminProfile from "./components/admin/profile";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Main from "./components/main";
 import User from "./components/user";
 import UserProfile from "./components/user/profile";
@@ -50,18 +50,19 @@ function App() {
           <Route element={<ListProduct />} path="listproduct" />
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
 
-
-
-
-          <Route element={
-            <UserAuthenticator>
-              <CheckOut />
-            </UserAuthenticator>
-          } path="checkout" />
+          <Route
+            element={
+              <UserAuthenticator>
+                <CheckOut />
+              </UserAuthenticator>
+            }
+            path="checkout"
+          />
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
         </Route>
+        <Route element={<Navigate to="/main/home" />} path="/" />
       </Routes>
     </BrowserRouter>
   );
