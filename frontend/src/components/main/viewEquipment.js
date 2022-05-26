@@ -79,38 +79,32 @@ const ViewEquipment = () => {
               <Card>
                 <h2>Camera from shootit</h2>
 
-                <Card>
+              
                   <h1>Price</h1>
                   {equipmentData.price}
-                </Card>
-                <Card>
+            
+               
                   <h1>EquipmentName</h1>
                   {equipmentData.type}
-                </Card>
-                <Card>
+              
                   <h1>Brand</h1>
                   {equipmentData.brand}
-                </Card>
-                <Card>
+                
                   <h1>Title</h1>
                   {equipmentData.title}
-                </Card>
-                <Card>
+                
                   <h1>Type</h1>
                   {equipmentData.type}
-                </Card>
-                <Card>
+               
                   <h1>Warranty</h1>
                   {equipmentData.warranty}
-                </Card>
-                <Card>
+                
                   <h1>SensorFeature</h1>
                   {equipmentData.sensorfeature}
-                </Card>
-                <Card>
+              
                   <h1>Delivery</h1>
                   {equipmentData.delivery}
-                </Card>
+                
                
 
                 {equipmentData.sensorfeature}
