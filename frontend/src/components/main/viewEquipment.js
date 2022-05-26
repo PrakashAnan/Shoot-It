@@ -46,7 +46,7 @@ const ViewEquipment = () => {
             <Grid item md={4}>
               <Paper className="backside">
                 <Card>
-                  {/* <div style={{background: url + "/uploads/" + equipmentData.thumbnail, height: '600px', backgroundSize: 'cover', backgroundPosition: }}></div> */}
+                  <div style={{background: url + "/uploads/" + equipmentData.thumbnail, height: '600px', backgroundSize: 'cover',}}></div>
                   <CardContent>
                     <img
                       className="card-img-top img-fluid"

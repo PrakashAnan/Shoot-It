@@ -234,7 +234,7 @@ const UpdateEquipment = ({equipmentdetail, fetchEquipments, setShowForm}) => {
                             className="form-control"
                           />
     
-                          <Button
+                          <Button   
                             type="submit"
                             variant="contained"
                             color="secondary"
