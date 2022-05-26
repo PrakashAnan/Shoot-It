@@ -21,8 +21,13 @@ import ViewEquipment from "./components/main/viewEquipment";
 import CheckOut from "./components/main/checkout";
 import AdminAuthenticator from "./components/adminAuthenticator";
 import UserAuthenticator from "./components/userAuth";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
+  const stripe = loadStripe(
+    "pk_test_51L1Wf4SG8drK0Wt5fTi5mmAwG39rkyndP4LsZdqBkKgOdoVfDPzkVt8OHKpq94LBqFxWmtLDQZqll91aHQRkk17500YOymPufa"
+  );
   return (
     <BrowserRouter>
       <Routes>
@@ -53,7 +58,9 @@ function App() {
           <Route
             element={
               <UserAuthenticator>
-                <CheckOut />
+                <Elements stripe={stripe}>
+                  <CheckOut />
+                </Elements>
               </UserAuthenticator>
             }
             path="checkout"
