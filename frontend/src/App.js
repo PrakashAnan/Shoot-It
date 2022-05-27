@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Admin from "./components/admin";
 import AdminProfile from "./components/admin/profile";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Main from "./components/main";
 import User from "./components/user";
 import UserProfile from "./components/user/profile";
@@ -21,8 +21,13 @@ import ViewEquipment from "./components/main/viewEquipment";
 import CheckOut from "./components/main/checkout";
 import AdminAuthenticator from "./components/adminAuthenticator";
 import UserAuthenticator from "./components/userAuth";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
+  const stripe = loadStripe(
+    "pk_test_51L1Wf4SG8drK0Wt5fTi5mmAwG39rkyndP4LsZdqBkKgOdoVfDPzkVt8OHKpq94LBqFxWmtLDQZqll91aHQRkk17500YOymPufa"
+  );
   return (
     <BrowserRouter>
       <Routes>
@@ -50,18 +55,21 @@ function App() {
           <Route element={<ListProduct />} path="listproduct" />
           <Route element={<ViewEquipment />} path="viewequipment/:id" />
 
-
-
-
-          <Route element={
-            <UserAuthenticator>
-              <CheckOut />
-            </UserAuthenticator>
-          } path="checkout" />
+          <Route
+            element={
+              <UserAuthenticator>
+                <Elements stripe={stripe}>
+                  <CheckOut />
+                </Elements>
+              </UserAuthenticator>
+            }
+            path="checkout"
+          />
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
         </Route>
+        <Route element={<Navigate to="/main/home" />} path="/" />
       </Routes>
     </BrowserRouter>
   );
