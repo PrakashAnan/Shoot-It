@@ -103,6 +103,7 @@ const UserSignup = () => {
                         placeholder="Password"
                         label="password"
                         id="password"
+                        type="password"
                         onChange={handleChange}
                         value={values.password}
                         helperText={errors.password}

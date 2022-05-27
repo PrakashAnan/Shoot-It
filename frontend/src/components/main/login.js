@@ -84,6 +84,7 @@ const Login = () => {
                       <TextField
                         className="w-100 mt-3"
                         placeholder="Password"
+                        type="password"
                         label="Password"
                         id="password"
                         onChange={handleChange}
