@@ -10,6 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+
 import {
   AccountCircle,
   AppRegistration,
@@ -18,7 +19,7 @@ import {
   MoreVert,
   Subscriptions,
   ShoppingCart
-} from "@mui/icons-material";
+}from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -117,6 +118,32 @@ const Header = () => {
 
   return (
     <div>
+      {/* <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            >
+              MUIwrdt
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      ) */}
+
+
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
