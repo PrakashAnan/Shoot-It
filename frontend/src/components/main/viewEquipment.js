@@ -42,17 +42,17 @@ const ViewEquipment = () => {
     if (!loading) {
       return (
         <div className="container-fluid">
-          <Grid container justifyContent="center" spacing={0}>
-            <Grid item md={4}>
+          <Grid container justifyContent="center" spacing={5}>
+            <Grid item md={6}>
               <Paper className="backside">
                 <Card>
                   <div className="img-fluid"
                     style={{
                       background: 'url('+url + "/uploads/" + equipmentData.thumbnail+')',
-                      height: "600px",
+                      height: "500px",
                       backgroundSize: "cover",
                     }}
-                  ></div>
+                 > </div>
                   <CardContent>
                     <img
                       className="card-img-top img-fluid"

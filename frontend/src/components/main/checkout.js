@@ -273,7 +273,7 @@ const CheckOut = () => {
                   </label>
                 </div>
                 <hr class="mb-4" />
-                <CardElement className="card" options={CARD_OPTIONS} />
+                {/* <CardElement className="card" options={CARD_OPTIONS} /> */}
 
                 <Button
                   disabled={isPaymentLoading}
@@ -305,20 +305,6 @@ const CheckOut = () => {
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
                     <h6 class="my-0">First Product</h6>
-                    <small class="text-muted">{selEquipment.type}</small>
-                  </div>
-                  <span class="text-muted">{selEquipment.price}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Second Product</h6>
-                    <small class="text-muted">{selEquipment.type}</small>
-                  </div>
-                  <span class="text-muted">{selEquipment.price}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Third Product</h6>
                     <small class="text-muted">{selEquipment.type}</small>
                   </div>
                   <span class="text-muted">{selEquipment.price}</span>
