@@ -46,7 +46,13 @@ const ViewEquipment = () => {
             <Grid item md={4}>
               <Paper className="backside">
                 <Card>
-                  <div style={{background: url + "/uploads/" + equipmentData.thumbnail, height: '600px', backgroundSize: 'cover',}}></div>
+                  <div className="img-fluid"
+                    style={{
+                      background: 'url('+url + "/uploads/" + equipmentData.thumbnail+')',
+                      height: "600px",
+                      backgroundSize: "cover",
+                    }}
+                  ></div>
                   <CardContent>
                     <img
                       className="card-img-top img-fluid"
@@ -79,33 +85,29 @@ const ViewEquipment = () => {
               <Card>
                 <h2>Camera from shootit</h2>
 
-              
-                  <h1>Price</h1>
-                  {equipmentData.price}
-            
-               
-                  <h1>EquipmentName</h1>
-                  {equipmentData.type}
-              
-                  <h1>Brand</h1>
-                  {equipmentData.brand}
-                
-                  <h1>Title</h1>
-                  {equipmentData.title}
-                
-                  <h1>Type</h1>
-                  {equipmentData.type}
-               
-                  <h1>Warranty</h1>
-                  {equipmentData.warranty}
-                
-                  <h1>SensorFeature</h1>
-                  {equipmentData.sensorfeature}
-              
-                  <h1>Delivery</h1>
-                  {equipmentData.delivery}
-                
-               
+                <h1>Price</h1>
+                {equipmentData.price}
+
+                <h1>EquipmentName</h1>
+                {equipmentData.type}
+
+                <h1>Brand</h1>
+                {equipmentData.brand}
+
+                <h1>Title</h1>
+                {equipmentData.title}
+
+                <h1>Type</h1>
+                {equipmentData.type}
+
+                <h1>Warranty</h1>
+                {equipmentData.warranty}
+
+                <h1>SensorFeature</h1>
+                {equipmentData.sensorfeature}
+
+                <h1>Delivery</h1>
+                {equipmentData.delivery}
 
                 {equipmentData.sensorfeature}
                 {equipmentData.lensfeature}
@@ -113,7 +115,6 @@ const ViewEquipment = () => {
                 {equipmentData.equipmentname}
                 {equipmentData.brand}
               </Card>
-              
             </Grid>
           </Grid>
         </div>

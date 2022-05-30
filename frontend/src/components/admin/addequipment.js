@@ -4,7 +4,6 @@ import {
   CardContent,
   Checkbox,
   Grid,
-  Paper,
   TextField,
 } from "@mui/material";
 import { Formik } from "formik";
@@ -356,10 +355,7 @@ const AddEquipment = () => {
                  )} 
                 </Formik>
           
-                      
-            
-    
-    </div>
+              </div>
   );
 };
 export default AddEquipment;
