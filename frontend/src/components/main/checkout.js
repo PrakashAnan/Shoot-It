@@ -304,8 +304,8 @@ const CheckOut = () => {
               <ul class="list-group mb-3 z-depth-1">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
-                    <h6 class="my-0">First Product</h6>
-                    <small class="text-muted">{selEquipment.type}</small>
+                    <h6 class="my-0">Product name</h6>
+                    <small class="text">{selEquipment.type}</small>
                   </div>
                   <span class="text-muted">{selEquipment.price}</span>
                 </li>
