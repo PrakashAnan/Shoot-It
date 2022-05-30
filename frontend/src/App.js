@@ -16,7 +16,6 @@ import ManageUser from "./components/admin/mangeUser";
 import DashBoard from "./components/admin/dashboard";
 import Login from "./components/main/login";
 import ListProduct from "./components/main/listequipment";
-
 import ViewEquipment from "./components/main/viewEquipment";
 import CheckOut from "./components/main/checkout";
 import AdminAuthenticator from "./components/adminAuthenticator";
