@@ -24,7 +24,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
-  const stripe = loadStripe(
+  const Stripe = loadStripe(
     "pk_test_51L1Wf4SG8drK0Wt5fTi5mmAwG39rkyndP4LsZdqBkKgOdoVfDPzkVt8OHKpq94LBqFxWmtLDQZqll91aHQRkk17500YOymPufa"
   );
   return (
@@ -57,7 +57,7 @@ function App() {
           <Route
             element={
               <UserAuthenticator>
-                <Elements stripe={stripe}>
+                <Elements stripe={Stripe}>
                   <CheckOut />
                 </Elements>
               </UserAuthenticator>
