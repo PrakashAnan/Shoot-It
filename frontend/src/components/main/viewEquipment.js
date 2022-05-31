@@ -41,41 +41,32 @@ const ViewEquipment = () => {
   const displayEquipmentDetails = () => {
     if (!loading) {
       return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-5">
           <Grid container justifyContent="center" spacing={5}>
-            <Grid item md={6}>
+            <Grid item md={5}>
               <Paper className="backside">
                 <Card>
-                  <div className="img-fluid"
+                  <div
                     style={{
-                      background: 'url('+url + "/uploads/" + equipmentData.thumbnail+')',
-                      height: "500px",
+                      background:
+                        "url(" +
+                        url +
+                        "/uploads/" +
+                        equipmentData.thumbnail +
+                        ")",
+                      height: "400px",
                       backgroundSize: "cover",
+                      backgroundPosition: "center",
                     }}
-                 > </div>
+                  ></div>
                   <CardContent>
-                    <img
-                      className="card-img-top img-fluid"
-                      height="600"
-                      src={equipmentData.name}
-                      alt={equipmentData.name}
-                      // backend se img kAise aaegaa
-                    />
-                    <Button
-                      variant="contained"
-                      className="mt-2"
-                      color="success"
-                    >
-                      ADD TO CART
-                    </Button>{" "}
-                    &nbsp;&nbsp;
                     <Button
                       variant="contained"
                       color="error"
                       className="mt-2"
                       onClick={orderProduct}
                     >
-                      ORDER IT
+                      ORDER NOW
                     </Button>
                   </CardContent>
                 </Card>
@@ -83,37 +74,20 @@ const ViewEquipment = () => {
             </Grid>
             <Grid item md={4}>
               <Card>
-                <h2>Camera from shootit</h2>
+                <CardContent>
+                  <p className="text-muted h4">{equipmentData.brand}</p>
+                  <p className="h2">{equipmentData.title}</p>
+                  <p className="display-4 mt-5"> ₹ {equipmentData.price}</p>
 
-                <h1>Price</h1>
-                {equipmentData.price}
+                  {equipmentData.type}
 
-                <h1>EquipmentName</h1>
-                {equipmentData.type}
+                  <h6>Warrenty Details</h6>
+                  {equipmentData.warranty}
 
-                <h1>Brand</h1>
-                {equipmentData.brand}
-
-                <h1>Title</h1>
-                {equipmentData.title}
-
-                <h1>Type</h1>
-                {equipmentData.type}
-
-                <h1>Warranty</h1>
-                {equipmentData.warranty}
-
-                <h1>SensorFeature</h1>
-                {equipmentData.sensorfeature}
-
-                <h1>Delivery</h1>
-                {equipmentData.delivery}
-
-                {equipmentData.sensorfeature}
-                {equipmentData.lensfeature}
-                {equipmentData.delivery}
-                {equipmentData.equipmentname}
-                {equipmentData.brand}
+                  <p className="mt-5">Features</p>
+                  <hr />
+                  <p>{equipmentData.features}</p>
+                </CardContent>
               </Card>
             </Grid>
           </Grid>
@@ -155,6 +129,6 @@ const ViewEquipment = () => {
     }
   };
 
-  return <div>{displayEquipmentDetails()}</div>;
+  return <div className="full-page">{displayEquipmentDetails()}</div>;
 };
 export default ViewEquipment;
