@@ -41,15 +41,15 @@ const ViewEquipment = () => {
   const displayEquipmentDetails = () => {
     if (!loading) {
       return (
-        <div className="container-fluid">
-          <Grid container justifyContent="center" spacing={0}>
-            <Grid item md={4}>
+        <div className="container-fluid mt-2">
+          <Grid container justifyContent="center" spacing={5}>
+            <Grid item md={6}>
               <Paper className="backside">
                 <Card>
                   <div className="img-fluid"
                     style={{
                       background: 'url('+url + "/uploads/" + equipmentData.thumbnail+')',
-                      height: "600px",
+                      height: "500px",
                       backgroundSize: "cover",
                     }}
                   ></div>
@@ -61,13 +61,13 @@ const ViewEquipment = () => {
                       alt={equipmentData.name}
                       // backend se img kAise aaegaa
                     />
-                    <Button
+                    {/* <Button
                       variant="contained"
                       className="mt-2"
                       color="success"
                     >
                       ADD TO CART
-                    </Button>{" "}
+                    </Button>{" "} */}
                     &nbsp;&nbsp;
                     <Button
                       variant="contained"

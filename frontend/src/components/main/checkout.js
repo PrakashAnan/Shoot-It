@@ -126,12 +126,7 @@ const CheckOut = () => {
           title: "Success",
           text: "Loggedin Successfully",
         });
-        // res.json((data) => {
-        //   if (data.isAdmin) {
-        //     sessionStorage.setItem("admin", JSON.stringify(data));
-        //     navigate("/admin/addequipment");
-        //   }
-        // });
+   
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",
@@ -273,8 +268,7 @@ const CheckOut = () => {
                   </label>
                 </div>
                 <hr class="mb-4" />
-                <CardElement className="card" options={CARD_OPTIONS} />
-
+                {/* <CardElement className="card" options={CARD_OPTIONS} /> */}
                 <Button
                   disabled={isPaymentLoading}
                   className="mt-5 w-100"
@@ -294,7 +288,6 @@ const CheckOut = () => {
                 </a>
               </div>
             </div>
-
             <div class="col-md-4 mb-4">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Your cart</span>
@@ -309,7 +302,7 @@ const CheckOut = () => {
                   </div>
                   <span class="text-muted">{selEquipment.price}</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                {/* <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
                     <h6 class="my-0">Second Product</h6>
                     <small class="text-muted">{selEquipment.type}</small>
@@ -322,17 +315,17 @@ const CheckOut = () => {
                     <small class="text-muted">{selEquipment.type}</small>
                   </div>
                   <span class="text-muted">{selEquipment.price}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between bg-light">
+                </li> */}
+                {/* <li class="list-group-item d-flex justify-content-between bg-light">
                   <div class="text-success">
                     <h6 class="my-0">Promo code</h6>
                     <small>EXAMPLECODE</small>
                   </div>
                   <span class="text-success">-$5</span>
-                </li>
+                </li> */}
                 <li class="list-group-item d-flex justify-content-between">
                   <span>Total (USD)</span>
-                  <strong>{selEquipment.price}+{selEquipment.price}+{selEquipment.price}</strong>
+                  <strong>{selEquipment.price}</strong>
                 </li>
               </ul>
 

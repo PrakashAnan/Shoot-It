@@ -1,8 +1,11 @@
 import { Button, Card, CardContent, Paper, TextField } from '@mui/material';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./home.css"
 
 const Home = () => {
+
+  const navigate=useNavigate()
   return (
     <div >
       <div data-draggable="true" className="container-fluid" style={{ position: 'relative', draggable: 'false' }}>
@@ -23,9 +26,10 @@ const Home = () => {
                     <div className="col-lg-10">
                       <div className="text-white pb-md-5">
                         <h1 className="my-md-5 px-4 px-md-5 display-3 fw-bold ls-tight"> <span>The best offer on the
-                          market</span> <br /> <span className="">for your business</span> </h1> <a
-                            className="btn   btn-secondary btn-lg py-3 px-5 me-2" href="#!" role="button"
-                            aria-controls="#picker-editor" draggable="false" >Get started</a>
+                          market</span> <br /> <span className="">for your business</span> </h1> 
+                          <a className="header_btn btn-lg py-3 px-5 me-2" href="#!" role="button"
+                            aria-controls="#picker-editor" draggable="false" >
+                              <Button className='' onClick={(e)=>{navigate('/main/usersignup/')}}>Register yourself</Button></a>
                       </div>
                     </div>
                   </div>
