@@ -17,19 +17,7 @@ const CheckOut = () => {
   const [address, setAddress] = useState("");
 
   const [isPaymentLoading, setPaymentLoading] = useState(false);
-
-  const checkoutForm = {
-    name: "",
-    username: "",
-    mobileno: Number,
-    password: String,
-    email: "",
-    address: "",
-    city: "",
-    state: "",
-    country: "",
-    pincode: "",
-  };
+  const del_char = 230;
 
   const navigate = useNavigate();
   const stripe = useStripe();
@@ -64,7 +52,7 @@ const CheckOut = () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: selEquipment.price * 100 }),
+      body: JSON.stringify({ amount: (del_char + selEquipment.price) * 100 }),
     };
     return fetch(url + "/create-payment-intent", requestOptions).then(
       (response) => response.json()
@@ -110,11 +98,15 @@ const CheckOut = () => {
     }
   };
 
-  const checkoutSubmit = (values) => {
-    console.log(values);
+  const checkoutSubmit = () => {
     fetch(url + "/order/add", {
       method: "POST",
-      body: JSON.stringify(values),
+      body: JSON.stringify({
+        user: currentUser._id,
+        equipment: selEquipment._id,
+        createdAt: new Date(),
+        rent: false,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -207,68 +199,9 @@ const CheckOut = () => {
                   </label>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-4 col-md-12 mb-4">
-                    <label for="country">Country</label>
-                    <select class="custom-select d-block w-100" required>
-                      <option value="">Choose...</option>
-                      <option>United States</option>
-                    </select>
-                    <div class="invalid-feedback">
-                      Please select a valid country.
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <label for="state">State</label>
-                    <select
-                      class="custom-select d-block w-100"
-                      id="state"
-                      required
-                    >
-                      <option value="">Choose...</option>
-                      <option>California</option>
-                    </select>
-                    <div class="invalid-feedback">
-                      Please provide a valid state.
-                    </div>
-                  </div>
-
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <label for="zip">Zip</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="zip"
-                      placeholder=""
-                      required
-                    />
-                    <div class="invalid-feedback">Zip code required.</div>
-                  </div>
-                </div>
-
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="same-address"
-                  />
-                  <label class="custom-control-label" for="same-address">
-                    Shipping address is the same as my billing address
-                  </label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="save-info"
-                  />
-                  <label class="custom-control-label" for="save-info">
-                    Save this information for next time
-                  </label>
-                </div>
                 <hr class="mb-4" />
-                {/* <CardElement className="card" options={CARD_OPTIONS} /> */}
+                <CardElement className="card" options={CARD_OPTIONS} />
+
                 <Button
                   disabled={isPaymentLoading}
                   className="mt-5 w-100"
@@ -278,76 +211,44 @@ const CheckOut = () => {
                 >
                   {isPaymentLoading
                     ? "Loading..."
-                    : `Pay ₹${selEquipment.price}/-`}
+                    : `Pay ₹${del_char + selEquipment.price}/-`}
                 </Button>
-                <a
-                  href="https://buy.stripe.com/test_fZe3ga0As20g56E7ss"
-                  class="btn btn-primary btn-lg btn-block"
-                >
-                  Pay Now
-                </a>
               </div>
             </div>
             <div class="col-md-4 mb-4">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">3</span>
+                <span class="text-muted">Product Details</span>
               </h4>
 
               <ul class="list-group mb-3 z-depth-1">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Product name</h6>
-                    <small class="text">{selEquipment.type}</small>
-                  </div>
-                  <span class="text-muted">{selEquipment.price}</span>
-                </li>
-                {/* <li class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="my-0">Second Product</h6>
-                    <small class="text-muted">{selEquipment.type}</small>
-                  </div>
-                  <span class="text-muted">{selEquipment.price}</span>
+                  <img
+                    src={url + "/uploads/" + selEquipment.thumbnail}
+                    alt=""
+                    className="img-fluid"
+                  />
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
-                    <h6 class="my-0">Third Product</h6>
-                    <small class="text-muted">{selEquipment.type}</small>
+                    <h6 class="my-0">
+                      {selEquipment.brand} {selEquipment.title}
+                    </h6>
+                    <small class="text-muted">{selEquipment.model}</small>
                   </div>
-                  <span class="text-muted">{selEquipment.price}</span>
-                </li> */}
-                {/* <li class="list-group-item d-flex justify-content-between bg-light">
-                  <div class="text-success">
-                    <h6 class="my-0">Promo code</h6>
-                    <small>EXAMPLECODE</small>
+                  <span class="text-muted">₹ {selEquipment.price}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0">Delivery Charges</h6>
                   </div>
-                  <span class="text-success">-$5</span>
-                </li> */}
+                  <span class="text-muted">₹ {del_char}</span>
+                </li>
+
                 <li class="list-group-item d-flex justify-content-between">
-                  <span>Total (USD)</span>
-                  <strong>{selEquipment.price}</strong>
+                  <span>Total (INR)</span>
+                  <strong>₹ {del_char + selEquipment.price}</strong>
                 </li>
               </ul>
-
-              <form class="card p-2">
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Promo code"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                  />
-                  <div class="input-group-append">
-                    <button
-                      class="btn btn-secondary btn-md waves-effect m-0"
-                      type="button"
-                    >
-                      Redeem
-                    </button>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
         </div>
