@@ -52,7 +52,7 @@ const ViewEquipment = () => {
                       height: "500px",
                       backgroundSize: "cover",
                     }}
-                  ></div>
+                 > </div>
                   <CardContent>
                     <img
                       className="card-img-top img-fluid"
