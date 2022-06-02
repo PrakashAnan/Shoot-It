@@ -205,6 +205,7 @@ const CheckOut = () => {
                 </div>
 
                 <hr class="mb-4" />
+                <form onSubmit={payMoney}>
                 <CardElement className="card" options={CARD_OPTIONS} />
 
                 <Button
@@ -218,6 +219,7 @@ const CheckOut = () => {
                     ? "Loading..."
                     : `Pay ₹${del_char + selEquipment.price}/-`}
                 </Button>
+                </form>
               </div>
             </div>
 
