@@ -75,9 +75,9 @@ const ViewEquipment = () => {
             <Grid item md={4}>
               <Card>
                 <CardContent>
-                  <p className="text-muted h4">{equipmentData.brand}</p>
-                  <p className="h2">{equipmentData.title}</p>
-                  <p className="display-4 mt-5"> ₹ {equipmentData.price}</p>
+                  <h2 className="text-muted h4">{equipmentData.brand}</h2>
+                  <h2 className="h2">{equipmentData.title}</h2>
+                  <h2 className="display-4 mt-5"> ₹ {equipmentData.price}</h2>
 
                   {equipmentData.type}
 
