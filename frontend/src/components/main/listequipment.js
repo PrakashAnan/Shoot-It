@@ -25,7 +25,13 @@ const ListEquipments = () => {
   const [filter, setFilter] = useState("");
   const [keyword, setKeyword] = useState("");
 
-  const filters = ["City", "Space", "Price"];
+  const filters = [{
+    name : 'Brand',
+    key : 'brand'
+  }, {
+    name : 'Type',
+    key : 'type'
+  }];
 
   const [selFilter, setSelFilter] = useState("");
 
@@ -67,25 +73,25 @@ const ListEquipments = () => {
           <div className="card-body p-4">
             <p className="text-muted">ADVANCED SEARCH</p>
             <div className="row">
-              <div className="col-sm-3">
-                {filters.map((name) => {
-                  return (
-                    <>
+              {filters.map((filter) => {
+                return (
+                  <>
+                    <div className="col-sm-2">
                       <button
-                        onClick={(e) => setSelFilter(name)}
+                        onClick={(e) => setSelFilter(filter)}
                         className={
                           "btn btn-" +
-                          (name === selFilter ? "" : "outline-") +
+                          (filter.name === selFilter.name ? "" : "outline-") +
                           "primary"
                         }
                       >
-                        {name}
+                        {filter.name}
                       </button>
-                      &nbsp; &nbsp;
-                    </>
-                  );
-                })}
-              </div>
+                    </div>
+                    &nbsp; &nbsp;
+                  </>
+                 );
+              })}
             </div>
           </div>
         </div>
@@ -98,11 +104,11 @@ const ListEquipments = () => {
   }, []);
 
   const applySearch = () => {
-    fetch(url + "/location/getall").then((res) => {
+    fetch(url + "/equipment/getall").then((res) => {
       if (res.status === 200) {
         res.json().then((data) => {
-          let filtered = console.log(data);
-          setEquipmentArray(data);
+          let filtered = data.filter(equip => equip[selFilter.key].toLowerCase().includes(keyword.toLowerCase()))
+          setEquipmentArray([...filtered]);
           setLoading(false);
         });
       }

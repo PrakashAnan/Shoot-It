@@ -74,7 +74,8 @@ const CheckOut = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser.name,
+          name: currentUser.username,
+          email: currentUser.email,
         },
       },
     });
@@ -116,14 +117,11 @@ const CheckOut = () => {
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: "Loggedin Successfully",
+          text: "Ordered Successfully",
         });
-        // res.json((data) => {
-        //   if (data.isAdmin) {
-        //     sessionStorage.setItem("admin", JSON.stringify(data));
-        //     navigate("/admin/addequipment");
-        //   }
-        // });
+        sessionStorage.removeItem('equipment')
+        navigate('/user/manageorder');
+   
       } else if (res.status === 300) {
         Swal.fire({
           icon: "error",
@@ -205,6 +203,7 @@ const CheckOut = () => {
                 </div>
 
                 <hr class="mb-4" />
+                <form onSubmit={payMoney}>
                 <CardElement className="card" options={CARD_OPTIONS} />
 
                 <Button
@@ -218,9 +217,9 @@ const CheckOut = () => {
                     ? "Loading..."
                     : `Pay ₹${del_char + selEquipment.price}/-`}
                 </Button>
+                </form>
               </div>
             </div>
-
             <div class="col-md-4 mb-4">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Product Details</span>
