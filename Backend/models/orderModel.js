@@ -1,14 +1,10 @@
 const mongoose = require("../connection");
 const mySchema = new mongoose.Schema({
 
-    firstname: String,
-    lastname:String,
-    username: String,
-    address:String,
-    address2:String,
-    email:String,
-    mobileno: Number,
-    password: String,
+    user : {type : mongoose.Types.ObjectId, ref :"user"},
+    address : String,
+    equipment : {type : mongoose.Types.ObjectId, ref:"equipment"},
+    rent: Boolean,
     createdAt: { type: Date, default: new Date() },
 });
 

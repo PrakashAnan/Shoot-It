@@ -74,7 +74,8 @@ const CheckOut = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser.name,
+          name: currentUser.username,
+          email: currentUser.email,
         },
       },
     });
@@ -116,8 +117,10 @@ const CheckOut = () => {
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: "Loggedin Successfully",
+          text: "Ordered Successfully",
         });
+        sessionStorage.removeItem('equipment')
+        navigate('/user/manageorder');
    
       } else if (res.status === 300) {
         Swal.fire({

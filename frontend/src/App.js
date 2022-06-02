@@ -22,6 +22,7 @@ import AdminAuthenticator from "./components/adminAuthenticator";
 import UserAuthenticator from "./components/userAuth";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import ManageOrder from "./components/user/manageOrder";
 
 function App() {
   const Stripe = loadStripe(
@@ -67,6 +68,7 @@ function App() {
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
+          <Route element={<ManageOrder />} path="manageorder" />
         </Route>
         <Route element={<Navigate to="/main/home" />} path="/" />
       </Routes>
