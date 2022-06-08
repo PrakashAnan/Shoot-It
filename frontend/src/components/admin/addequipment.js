@@ -18,7 +18,6 @@ const AddEquipment = () => {
   const equipmentdetail = {
     title: "",
     type: "",
-
     model: "",
     price: "",
     image: "",
