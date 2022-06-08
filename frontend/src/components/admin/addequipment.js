@@ -3,7 +3,9 @@ import {
   Card,
   CardContent,
   Checkbox,
+  FormControlLabel,
   Grid,
+  Paper,
   TextField,
 } from "@mui/material";
 import { Formik } from "formik";
@@ -14,9 +16,9 @@ import "./addequipment.css";
 
 const AddEquipment = () => {
   const equipmentdetail = {
+    title: "",
     type: "",
-    review:"",
-    rating:"",
+
     model: "",
     price: "",
     image: "",
@@ -25,14 +27,14 @@ const AddEquipment = () => {
     specification: "",
     availableOffer: "",
     delivery: "",
-    sensorfeature:"",
-    lensfeature:"",
-    warranty:"",
-    highlights:"",
+    sensorfeature: "",
+    lensfeature: "",
+    warranty: "",
+    highlights: "",
     rentable: false,
     rentPrice: "",
     thumbnail: String,
-  }
+  };
 
   const url = app_config.api_url;
   const [thumbnail, setThumbnail] = useState("");
@@ -52,10 +54,9 @@ const AddEquipment = () => {
           icon: "success",
           title: "Success",
           text: "Added",
-        })
+        });
       }
     });
-
   };
 
   const uploadThumbnail = (e) => {
@@ -71,291 +72,183 @@ const AddEquipment = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Formik initialValues={equipmentdetail} onSubmit={submitEquipment}>
-
-{({ values, handleChange, handleSubmit }) => (
-  <form onSubmit={handleSubmit}>
-      <Card>
-      <CardContent>
-      <Grid container spacing={10}>
-              <Grid item md={6}>
-                   
-
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        placeholder="Type"
-                        variant="filled"
-                        label="Type"
-                        id="type"
-                        value={values.type}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-                      <Grid item md={6}>  
-
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        placeholder="Review"
-                        variant="filled"
-                        label="Review"
-                        id="review"
-                        value={values.review}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-                      </Grid>
-
-
-                      <Grid container spacing={10}>
-                     <Grid item md={6}>
-                     <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        placeholder="Rating"
-                        variant="filled"
-                        label="Rating"
-                        id="rating"
-                        value={values.rating}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-                      <Grid item md={6}>
-                      <TextField
-                      className="w-100 mt-2"
-                      autoComplete="off"
-                      placeholder="Title"
-                      variant="filled"
-                      label="Title"
-                      id="title"
-                      value={values.title}
-                      onChange={handleChange}
-                    />
-                    </Grid>
-                    </Grid>
-                     
-                      <Grid container spacing={10}>
-                      <Grid item md={6}>
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        placeholder="Model"
-                        variant="filled"
-                        label="Model"
-                        id="model"
-                        value={values.model}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-                      <Grid item md={6}>
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="Price"
-                        label="Price"
-                        id="price"
-                        value={values.price}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-                    </Grid>
-                      
-                      
-                      
-                     <Grid container spacing={10}>
-                     <Grid item md={6}>
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="Brand"
-                        label="Brand"
-                        id="brand"
-                        value={values.brand}
-                        onChange={handleChange}
-                      />
-
-                      </Grid>
-
-
-                      <Grid item md={6}>
-                      <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="comboOffer"
-                        label="comboOffer"
-                        id="comboOffer"
-                        value={values.comboOffer}
-                        onChange={handleChange}
-                      />
-
-                       </Grid>
-                       </Grid>
-
-
-                      <Grid container spacing={10}>
-                      <Grid item md={6}>
-                       <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="specification"
-                        label="specification"
-                        id="specification"
-                        value={values.specification}
-                        onChange={handleChange}
-                      />
-
-                       </Grid>
-
-                       <Grid item md={6}>
-                       <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="availableOffer"
-                        label="availableOffer"
-                        id="availableOffer"
-                        value={values.availableOffer}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-
-                      </Grid>
-                
-                
-                      <Grid container spacing={10}>
-                       <Grid item md={6}>
-                       <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="delivery"
-                        label="delivery"
-                        id="delivery"
-                        value={values.delivery}
-                        onChange={handleChange}
-                      />
-                     </Grid>
-
-
-                    <Grid item md={6}>
-                       <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="sensorfeature"
-                        label="sensorfeature"
-                        id="sensorfeature"
-                        value={values.sensorfeature}
-                        onChange={handleChange}
-                      />
-
-                     </Grid>
-                    </Grid>
-
-                <Grid container spacing={10}>
-                  <Grid item md={6}>
-                  <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="lensfeature"
-                        label="lensfeature"
-                        id="lensfeature"
-                        value={values.lensfeature}
-                        onChange={handleChange}
-                      />
-                  </Grid>
-
-                  <Grid item md={6}>
-                  <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="warranty"
-                        label="warranty"
-                        id="warranty"
-                        value={values.warranty}
-                        onChange={handleChange}
-                      />
-                      </Grid>
-                     </Grid>
-
-
-                        <Grid container spacing={10}>
-
-                          <Grid item md={6}>
-                          <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="RentPrice"
-                        label="RentPrice"
-                        id="rentPrice"
-                        value={values.rentPrice}
-                        onChange={handleChange}
-                      />
-
-                          </Grid>
-
-
-
-                        <Grid item md={6}>
+        {({ values, handleChange, handleSubmit }) => (
+          <Card className="full-page">
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                <div className="col-md-3">
+                  <div
+                    style={{
+                      background:
+                        "url(https://www.uscreen.tv/wp-content/uploads/2018/11/Ultimate-video-production-equipment.jpg)",
+                      backgroundSize: "cover",
+                      height: "100%",
+                    }}
+                  ></div>
+                </div>
+                <div className="col-md-9">
+                  <CardContent>
+                    <p className="display-4 text-muted">Add New Equipment</p>
+                    <hr />
+                    <Grid container spacing={5}>
+                      <Grid item md={12} sx={{ mt: 5 }}>
                         <TextField
-                        className="w-100 mt-2"
-                        autoComplete="off"
-                        variant="filled"
-                        placeholder="Highlights"
-                        label="highlights"
-                        id="highlights"
-                        value={values.highlights}
-                        onChange={handleChange}
-                      />
-
-                     </Grid>
-                     </Grid>
-      
-                      <Checkbox
-                        label="Rentable"
-                        id="rentable"
-                        checked={values.rentable}
-                        onChange={handleChange}
-                      />
-                        <Grid container spacing={10}>
-                        <Grid item md={6}>
-                      
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="Title"
+                          label="Title"
+                          id="title"
+                          value={values.title}
+                          onChange={handleChange}
+                        />
                       </Grid>
+                    </Grid>
+                    <Grid container spacing={10}>
+                      <Grid item md={4} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="Brand"
+                          label="Brand"
+                          id="brand"
+                          value={values.brand}
+                          onChange={handleChange}
+                        />
                       </Grid>
+                      <Grid item md={4} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="Model"
+                          label="Model"
+                          id="model"
+                          value={values.model}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                      <Grid item md={4} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="Type"
+                          label="Type"
+                          id="type"
+                          value={values.type}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                    </Grid>
 
-                      <label>Upload thumbnail</label>
-                      <input
-                        type="file"
-                        onChange={uploadThumbnail}
-                        className="form-control"
-                      />
+                    <Grid container spacing={10}>
+                      <Grid item md={6} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="Price"
+                          label="Price"
+                          id="price"
+                          value={values.price}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                      <Grid item md={6} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="RentPrice"
+                          label="RentPrice"
+                          id="rentPrice"
+                          value={values.rentPrice}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                    </Grid>
 
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        color="secondary"
-                        className="button w-100 mt-4"
-                      >
-                        AddEquipment
-                      </Button>
-                  
-                
-                </CardContent>
-                </Card>
-                </form>
-                 )} 
-                </Formik>
-          
+                    <Grid container spacing={10}>
+                      <Grid item md={12} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          placeholder="warranty"
+                          label="warranty"
+                          id="warranty"
+                          value={values.warranty}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                    </Grid>
+
+                    <Grid container spacing={10}>
+                      <Grid item md={6} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          multiline
+                          rows={3}
+                          placeholder="specification"
+                          label="specification"
+                          id="specification"
+                          value={values.specification}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                      <Grid item md={6} sx={{ mt: 3 }}>
+                        <TextField
+                          className="w-100 mt-2"
+                          autoComplete="off"
+                          multiline
+                          rows={3}
+                          placeholder="Highlights"
+                          label="highlights"
+                          id="highlights"
+                          value={values.highlights}
+                          onChange={handleChange}
+                        />
+                      </Grid>
+                    </Grid>
+                    <label
+                      className="btn btn-outline-dark mt-3"
+                      htmlFor="thumb"
+                    >
+                      <i class="fas fa-upload"></i>Upload Thumbnail
+                    </label>
+                    <input
+                      type="file"
+                      id="thumb"
+                      onChange={uploadThumbnail}
+                      className="hidden"
+                      placeholder="Select Equipment Display Image"
+                    />
+                    <br />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          id="rentable"
+                          checked={values.rentable}
+                          onChange={handleChange}
+                        />
+                      }
+                      label="This Item is Available for Rent"
+                    />
+
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="secondary"
+                      className="button w-100 mt-4"
+                    >
+                      AddEquipment
+                    </Button>
+                  </CardContent>
+                </div>
               </div>
+            </form>
+          </Card>
+        )}
+      </Formik>
+    </div>
   );
 };
 export default AddEquipment;
