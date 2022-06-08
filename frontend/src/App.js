@@ -22,10 +22,11 @@ import AdminAuthenticator from "./components/adminAuthenticator";
 import UserAuthenticator from "./components/userAuth";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import ManageOrder from "./components/user/manageOrder";
 
 function App() {
   const Stripe = loadStripe(
-    "pk_test_51L1Wf4SG8drK0Wt5fTi5mmAwG39rkyndP4LsZdqBkKgOdoVfDPzkVt8OHKpq94LBqFxWmtLDQZqll91aHQRkk17500YOymPufa"
+    "pk_test_51L19xwSJzBaIo7nUm8FZEIjZj9AOnf8lyZmXjQiktfq7zkYrL4sGLGyDhyRR0Eo2rNH2CNNduTAuuWuJQ96MlubD00ubDc2JYa"
   );
   return (
     <BrowserRouter>
@@ -67,6 +68,7 @@ function App() {
         </Route>
         <Route element={<User />} path="user">
           <Route element={<UserProfile />} path="profile" />
+          <Route element={<ManageOrder />} path="manageorder" />
         </Route>
         <Route element={<Navigate to="/main/home" />} path="/" />
       </Routes>

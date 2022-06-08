@@ -1,5 +1,4 @@
 import {
-  alpha,
   Button,
   Card,
   CardActions,
@@ -7,16 +6,15 @@ import {
   CardMedia,
   CircularProgress,
   Grid,
-  InputBase,
   Rating,
   Skeleton,
-  styled,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import StarIcon from "@mui/icons-material/Star";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { useNavigate } from "react-router-dom";
 import app_config from "../config";
 import "./listequipment.css";
-import SearchIcon from "@mui/icons-material/Search";
 
 const ListEquipments = () => {
   const [equipmentArray, setEquipmentArray] = useState([]);
@@ -24,6 +22,18 @@ const ListEquipments = () => {
 
   const url = app_config.api_url;
   const navigate = useNavigate();
+  const [filter, setFilter] = useState("");
+  const [keyword, setKeyword] = useState("");
+
+  const filters = [{
+    name : 'Brand',
+    key : 'brand'
+  }, {
+    name : 'Type',
+    key : 'type'
+  }];
+
+  const [selFilter, setSelFilter] = useState("");
 
   // Step 1 : Fetch Data from server
   const fetchData = () => {
@@ -36,9 +46,74 @@ const ListEquipments = () => {
       });
   };
 
+  const searchCard = () => {
+    return (
+      <div className="pt-5">
+        <div className="card ">
+          <div className="card-header bg-white p-4">
+            <div class="input-group rounded">
+              <input
+                style={{ border: "none", outline: "none" }}
+                type="search"
+                class="form-control rounded"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+                onChange={(e) => setKeyword(e.target.value)}
+              />
+              <span
+                class="input-group-text border-0 bg-white"
+                id="search-addon"
+                onClick={applySearch}
+              >
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+          <div className="card-body p-4">
+            <p className="text-muted">ADVANCED SEARCH</p>
+            <div className="row">
+              {filters.map((filter) => {
+                return (
+                  <>
+                    <div className="col-sm-2">
+                      <button
+                        onClick={(e) => setSelFilter(filter)}
+                        className={
+                          "btn btn-" +
+                          (filter.name === selFilter.name ? "" : "outline-") +
+                          "primary"
+                        }
+                      >
+                        {filter.name}
+                      </button>
+                    </div>
+                    &nbsp; &nbsp;
+                  </>
+                 );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
+
+  const applySearch = () => {
+    fetch(url + "/equipment/getall").then((res) => {
+      if (res.status === 200) {
+        res.json().then((data) => {
+          let filtered = data.filter(equip => equip[selFilter.key].toLowerCase().includes(keyword.toLowerCase()))
+          setEquipmentArray([...filtered]);
+          setLoading(false);
+        });
+      }
+    });
+  };
 
   const displaySkeleton = () => {
     return [1, 2, 3, 4].map((e) => (
@@ -70,16 +145,25 @@ const ListEquipments = () => {
     if (!loading) {
       return equipmentArray.map((equipment) => (
         <div className="col-lg-4 col-md-12 mb-4">
-
-
-
-
-
-
-          <div className="card" onClick={(e) => { navigate('/main/viewequipment/' + equipment._id) }}>
-            <div className="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
-              data-mdb-ripple-color="light">
-              <div style={{ background: 'url(' + url + '/uploads/' + equipment.thumbnail + ')', height: '300px', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+          <div
+            className="card"
+            onClick={(e) => {
+              navigate("/main/viewequipment/" + equipment._id);
+            }}
+          >
+            <div
+              className="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+              data-mdb-ripple-color="light"
+            >
+              <div
+                style={{
+                  background:
+                    "url(" + url + "/uploads/" + equipment.thumbnail + ")",
+                  height: "300px",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
 
               {/* <img src={url + "/uploads/" + equipment.thumbnail} 
                 className="w-100" /> */}
@@ -90,14 +174,17 @@ const ListEquipments = () => {
                 </div>
               </div>
               <div className="hover-overlay">
-                <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}></div>
+                <div
+                  className="mask"
+                  style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
+                ></div>
               </div>
-
             </div>
             <div className="card-body">
-
               <h4>
-                <span>{equipment.brand} {equipment.model}</span>
+                <span>
+                  {equipment.brand} {equipment.model}
+                </span>
                 <span className="float-end">₹ {equipment.price}</span>
               </h4>
               {/* <span className="my-auto">4.3</span> */}
@@ -117,11 +204,10 @@ const ListEquipments = () => {
   };
   return (
     <div className="list1 container mt-2">
+      {searchCard()}
 
-      <div className="row" container spacing={4}>
+      <div className="row mt-5" container spacing={4}>
         {displayEquipments()}
-
-
       </div>
     </div>
   );

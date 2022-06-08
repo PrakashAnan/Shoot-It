@@ -9,7 +9,7 @@ const orderRouter = require("./routers/orderRouter");
 const utilRouter = require("./routers/utils");
 
 const stripe_sk =
-  "sk_test_51L1Wf4SG8drK0Wt5r9B58VpCVuppBvRGQciPAEEoKGtMEtRWr9HpGdBK8ulyJuckoVaJcaUSPDeYibVSIi89rGgj006q8dj8ZW";
+  "sk_test_51L19xwSJzBaIo7nUgoRoSILj7wsJDvHYAg8yhp0yiMyt04CDL54fqCMuA6OHk1qPI72MQXpD1vzeyD3BqFP3EkRY00Vzej716B";
 const stripe = require("stripe")(stripe_sk);
 
 app.use(

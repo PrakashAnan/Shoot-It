@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
-import Sidebar from '../sidebar'
+import Sidebar from './sidebar'
 import { AccountCircleRounded, Dashboard, ManageAccounts } from "@mui/icons-material"
 import LoginIcon from '@mui/icons-material/Login';  
 import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
