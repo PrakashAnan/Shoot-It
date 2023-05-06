@@ -1,15 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Demo from './demo';
 import Footer from './footer';
+import Gallery from './gallery';
 import Header from './header';
 
 
 const Main = () => {
   return (
     <div>
-        
-        <Header />
-      
+                          
+        <Header /> 
+        <Demo />
+        <Gallery />
         <Outlet />
         <Footer />
 

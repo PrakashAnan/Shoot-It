@@ -3,7 +3,6 @@ import {Outlet} from "react-router-dom";
 import Sidebar from './sidebar'
 import { AccountCircleRounded, Dashboard, ManageAccounts } from "@mui/icons-material"
 import LoginIcon from '@mui/icons-material/Login';  
-import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
 import AdminPanelSettingsTwoToneIcon from '@mui/icons-material/AdminPanelSettingsTwoTone';
 import Footer from '../main/footer';
 
@@ -51,6 +50,12 @@ const Admin = () => {
             name:"Login",
             icon:<LoginIcon/>,
             link:"/main/login",
+
+        },
+        {
+            name:"Login",
+            icon:<LoginIcon/>,
+            link:"/main/demo",
 
         },
     ]

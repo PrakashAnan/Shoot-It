@@ -10,6 +10,6 @@ const mySchema = new mongoose.Schema({
   isAdmin: { type: Boolean, default: false },
   createdAt: { type: Date, default: new Date() },
 });
-const myModel = mongoose.model("user", mySchema);
 
+const myModel = mongoose.model("user", mySchema);
 module.exports = myModel;

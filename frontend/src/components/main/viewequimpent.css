@@ -12,3 +12,15 @@
 .demoimg.sticky{
     position: sticky;
 }
+
+/* table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  } */
+  th, td {
+    background-color: #35abab;
+  }
+  table, th, td {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+  }

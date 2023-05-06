@@ -184,12 +184,17 @@ const ListEquipments = () => {
               <h4>
                 <span>
                   {equipment.brand} {equipment.model}
+                   {equipment.specification}
+                   {equipment.highlights} 
+
                 </span>
+              
                 <span className="float-end">₹ {equipment.price}</span>
               </h4>
               {/* <span className="my-auto">4.3</span> */}
               <Rating value={5} />
               <h6 className="text-muted">653 Reviews</h6>
+          
             </div>
           </div>
         </div>

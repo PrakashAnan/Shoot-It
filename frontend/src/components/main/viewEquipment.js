@@ -87,6 +87,27 @@ const ViewEquipment = () => {
                   <p className="mt-5">Features</p>
                   <hr />
                   <p>{equipmentData.features}</p>
+                  <p className="h2">{equipmentData.specification}</p>
+                  <p className="display-4 mt-5">{equipmentData.highlights}</p>
+                  <table>
+                    <tr>
+                      <th>Product </th>
+                      <th>Contact</th>
+                      <th>Color</th>
+                    </tr>
+                    <br></br>
+                    <tr>
+                      <td>camera</td>
+                      <td>7488250997</td>
+                      <td>red</td>
+                    </tr>
+                    <br></br>
+                    <tr>
+                      <td>LAPTOP</td>
+                      <td>8210202909</td>
+                      <td>SILVER</td>
+                    </tr>
+                  </table>
                 </CardContent>
               </Card>
             </Grid>
